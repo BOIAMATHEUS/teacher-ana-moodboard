@@ -453,7 +453,7 @@ textarea{min-height:120px;resize:vertical;line-height:1.5}
     <div class="bastao" aria-hidden="true"></div>
     <div class="folha">
       <div class="cab"><h2 id="t7">A sua resposta</h2><span class="ref" aria-label="Prancha VII">VII<small>laringe</small></span></div>
-      <p class="corpo">Confira suas reações, escreva o que quiser e toque em <b>Enviar</b>. A resposta chega direto pra gente, com tudo o que você escolheu no manual. Pode enviar mais de uma vez: cada envio fica registrado.</p>
+      <p class="corpo">Confira suas reações, escreva o que quiser e toque em <b>Enviar</b>. A resposta chega direto pra gente, com tudo o que você escolheu no manual. Pode enviar mais de uma vez: cada envio fica registrado. O que você marca no caminho também vai sendo salvo sozinho, então nada se perde se a página fechar; o Enviar é pra dizer que terminou.</p>
       <ul class="resumo" id="resumo"></ul>
       <p class="escolhas" id="escolhas"></p>
       <div class="campo"><label for="obs">Comentários (o que amou, o que mudaria)</label><textarea id="obs" placeholder="Ex.: amei as cores, queria o verde-limão um pouco mais presente..."></textarea></div>
@@ -598,7 +598,10 @@ let st = {}; try { st = JSON.parse(localStorage.getItem('opiniao-ana-v3') || '{}
 if (st.par) par = st.par; if (st.fundo) fundo = st.fundo; if (st.dest) dest = st.dest;
 document.documentElement.dataset.par = par;
 const gravar = () => { try { localStorage.setItem('opiniao-ana-v3', JSON.stringify(st)); } catch {} };
-function salvar() { st.par = par; st.fundo = fundo; st.dest = dest; st.alterado = true; gravar(); }
+// registro automático: toda mudança vai pra planilha sozinha, sem depender do botão Enviar
+if (!st.sid) { st.sid = Math.random().toString(36).slice(2, 7); gravar(); }
+const T0 = Date.now(); const vistas = new Set(); let espera;
+function salvar() { st.par = par; st.fundo = fundo; st.dest = dest; st.alterado = true; gravar(); clearTimeout(espera); espera = setTimeout(() => registrar('auto'), 10000); }
 const carimbos = (k) => REA.map((r) => `<button type="button" data-k="${k}" data-r="${r}" aria-pressed="${st[k] === r}">${r}</button>`).join('');
 function desenharReacoes() {
   document.querySelectorAll('.reacao').forEach((el) => { const k = el.dataset.k; el.querySelector('.carimbos').innerHTML = carimbos(k); el.querySelector('.carimbos').setAttribute('role', 'group'); el.querySelector('.carimbos').setAttribute('aria-label', 'Reação: ' + el.querySelector('p').textContent); });
@@ -606,31 +609,48 @@ function desenharReacoes() {
   document.querySelectorAll('.carimbos button').forEach((b) => b.onclick = () => { st[b.dataset.k] = b.dataset.r; salvar(); document.querySelectorAll(`.carimbos button[data-k="${b.dataset.k}"]`).forEach((x) => x.setAttribute('aria-pressed', x.dataset.r === b.dataset.r)); });
 }
 const obs = $('#obs'); obs.value = st.obs || ''; obs.oninput = () => { st.obs = obs.value; salvar(); };
+const fra = $('#frase'); if (st.frase) fra.value = st.frase; fra.addEventListener('input', () => { st.frase = fra.value; salvar(); });
+const ROM = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+const vigia = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) vistas.add(e.target.id); }), { threshold: 0.25 });
+document.querySelectorAll('.prancha[id]').forEach((p) => vigia.observe(p));
 const nomePar = () => { const p = PARES.find((x) => x[0] === par); return `${p[1]} (${p[2]})`; };
 function escolhas() { const e = $('#escolhas'); if (e) e.innerHTML = `Vai junto: tiragem <b>${esc(nomePar())}</b> e acorde <b>${esc(NOMES[fundo + '|' + dest] || '')}</b> (${esc(fundo)} com ${esc(dest)}).`; }
-function dados(rascunho) {
+const MODO = { enviou: 'ENVIADO (tocou em Enviar)', auto: 'registro automático (ainda não tocou em Enviar)', saiu: 'registro automático ao sair da página (não tocou em Enviar)', visita: 'abriu o manual (ainda sem marcar nada)' };
+function dados(modo) {
   const d = new URLSearchParams();
-  d.append(E.data, new Date().toLocaleString('pt-BR') + (rascunho ? ' · rascunho automático (saiu sem tocar em Enviar)' : ''));
+  const viu = ROM.filter((r, i) => vistas.has('p' + (i + 1)));
+  d.append(E.data, `${new Date().toLocaleString('pt-BR')} · ${MODO[modo]} · sessão ${st.sid} · viu pranchas ${viu.join(', ') || 'nenhuma'} · ${Math.max(1, Math.round((Date.now() - T0) / 60000))} min na página`);
   d.append(E.conceito, st.conceito || 'sem marcar'); d.append(E.cores, st.cores || 'sem marcar'); d.append(E.fontes, st.fontes || 'sem marcar');
   d.append(E.layouts, `layouts: ${st.layouts || 'sem marcar'} · feed: ${st.feed || 'sem marcar'}`);
   d.append(E.elementos, st.elementos || 'sem marcar'); d.append(E.fotos, st.elementos || 'sem marcar');
-  d.append(E.par, nomePar()); d.append(E.combo, `${NOMES[fundo + '|' + dest] || ''}: fundo ${fundo}, destaque ${dest}`); d.append(E.obs, (st.obs || '').trim() || '(sem comentário)');
+  d.append(E.par, nomePar()); d.append(E.combo, `${NOMES[fundo + '|' + dest] || ''}: fundo ${fundo}, destaque ${dest}`); d.append(E.obs, ((st.obs || '').trim() || '(sem comentário)') + ((st.frase || '').trim() ? `\nFrase que ela testou nas fontes: ${st.frase.trim()}` : ''));
   return d;
+}
+// conteúdo sem a linha de data/tempo: evita gravar duas vezes a mesma coisa
+const assinatura = () => { const d = dados('auto'); d.delete(E.data); return d.toString(); };
+function registrar(modo) {
+  clearTimeout(espera);
+  if (modo !== 'visita' && (!st.alterado || assinatura() === st.ultimo)) return;
+  const corpo = dados(modo);
+  try { if (modo === 'saiu' && navigator.sendBeacon) navigator.sendBeacon(FORM, corpo); else fetch(FORM, { method: 'POST', mode: 'no-cors', keepalive: true, body: corpo }).catch(() => {}); } catch { return; }
+  if (modo !== 'visita') { st.ultimo = assinatura(); st.alterado = false; gravar(); }
 }
 function texto() { return ['Manual Teacher Ana: minha resposta', ...PARTES.map(([k, n]) => `${n}: ${st[k] || 'sem marcar'}`), `Fontes: ${nomePar()}`, `Cores: ${NOMES[fundo + '|' + dest]} (fundo ${fundo}, destaque ${dest})`, (st.obs || '').trim() ? 'Comentários: ' + st.obs.trim() : ''].filter(Boolean).join('\n'); }
 function historico() { const h = st.envios || []; $('#historico').textContent = h.length ? `Enviado ${h.length === 1 ? 'uma vez' : h.length + ' vezes'}. Último envio: ${h[h.length - 1]}.` : ''; }
 $('#enviar').onclick = async () => {
   const b = $('#enviar'); b.disabled = true; const t0 = b.innerHTML; b.textContent = 'Enviando...';
-  try { await fetch(FORM, { method: 'POST', mode: 'no-cors', body: dados(false) }); st.envios = [...(st.envios || []), new Date().toLocaleString('pt-BR')]; st.alterado = false; gravar(); historico(); toast('Resposta enviada. Obrigada!'); }
+  clearTimeout(espera);
+  try { await fetch(FORM, { method: 'POST', mode: 'no-cors', body: dados('enviou') }); st.envios = [...(st.envios || []), new Date().toLocaleString('pt-BR')]; st.ultimo = assinatura(); st.alterado = false; gravar(); historico(); toast('Resposta enviada. Obrigada!'); }
   catch { toast('Não consegui enviar. Toque em "Copiar texto" e mande pelo WhatsApp.'); }
   b.disabled = false; b.innerHTML = t0;
 };
 $('#copiar').onclick = async () => toast((await copiar(texto())) ? 'Copiado. Agora cole no WhatsApp' : 'Não consegui copiar');
-addEventListener('visibilitychange', () => {
-  if (document.visibilityState !== 'hidden' || !st.alterado) return;
-  if (!PARTES.some(([k]) => st[k]) && !(st.obs || '').trim()) return;
-  try { navigator.sendBeacon(FORM, dados(true)); st.alterado = false; gravar(); } catch {}
-});
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') registrar('saiu'); });
+addEventListener('pagehide', () => registrar('saiu'));
+// marca a abertura uma vez por sessão do navegador, depois de 20 s na página
+setTimeout(() => { try { if (sessionStorage.getItem('ana-visita')) return; sessionStorage.setItem('ana-visita', '1'); } catch {} registrar('visita'); }, 20000);
+// se ela mudou algo e fechou antes do registro sair, manda ao voltar
+if (st.alterado) setTimeout(() => registrar('auto'), 3000);
 
 document.querySelectorAll('.prancha .folha').forEach((f, i) => { const p = document.createElement('p'); p.className = 'imprenta'; p.textContent = `Florescer a voz · Tab. ${['I','II','III','IV','V','VI','VII'][i]} · impresso pela Rama`; f.appendChild(p); });
 desenharReacoes(); desenharTiragens(); desenharPosts(); pintarAcorde(); historico();
