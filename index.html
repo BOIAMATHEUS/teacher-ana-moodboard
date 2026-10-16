@@ -4,165 +4,196 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Teacher Ana · moodboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&family=Caveat:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..800,0..100,0..1&family=Caveat:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Gloock&family=Shadows+Into+Light&family=Work+Sans:wght@400;500;700&family=Young+Serif&family=Patrick+Hand&family=Nunito:wght@400;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Caveat+Brush&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* Página de aprovação do moodboard. Paleta: a que a própria Ana mandou. Layout: coluna editorial que vira grade no desktop. */
-:root{--musgo:#3F4A2B;--cafe:#4A3426;--tinta:#1C1A17;--papel:#F4EDDD;--areia:#E3D4B4;--terracota:#C4623A;--terracota-escura:#A24B28;--limao:#C9DB5E;--jeans:#4F6D8F;--branco:#FFFCF5;--suave:#5A5145;
---titulo:"Fraunces",Georgia,serif;--mao:"Caveat","Segoe Print",cursive;--texto:"DM Sans",system-ui,sans-serif;color-scheme:light}
+/* Página de aprovação. Paleta: a da própria Ana. Os posts são um sistema de 5 layouts desenhados em unidades do contêiner (cqw), então ficam idênticos em qualquer tamanho. */
+:root{--musgo:#3F4A2B;--cafe:#4A3426;--tinta:#1C1A17;--papel:#F4EDDD;--areia:#E3D4B4;--terracota:#C4623A;--terra-esc:#A24B28;--limao:#C9DB5E;--jeans:#4F6D8F;--branco:#FFFCF5;--suave:#5A5145;
+--titulo:"Fraunces",Georgia,serif;--mao:"Caveat","Segoe Print",cursive;--texto:"DM Sans",system-ui,sans-serif;--fvs:"SOFT" 100,"WONK" 1;--tw:600;--mw:700;--ms:1;color-scheme:light}
+body[data-par="b"]{--titulo:"Gloock",Georgia,serif;--mao:"Shadows Into Light",cursive;--texto:"Work Sans",system-ui,sans-serif;--fvs:normal;--tw:400;--mw:400;--ms:1.1}
+body[data-par="c"]{--titulo:"Young Serif",Georgia,serif;--mao:"Patrick Hand",cursive;--texto:"Nunito",system-ui,sans-serif;--fvs:normal;--tw:400;--mw:400;--ms:1.05}
+body[data-par="d"]{--titulo:"Bricolage Grotesque",system-ui,sans-serif;--mao:"Caveat Brush",cursive;--texto:"Figtree",system-ui,sans-serif;--fvs:normal;--tw:700;--mw:400;--ms:1}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--papel);color:var(--tinta);font:400 17px/1.55 var(--texto);padding:0 20px 80px}
-.f{font-family:var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1}
-.mao{font-family:var(--mao);font-weight:700}
+.T{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw)}
+.M{font-family:var(--mao);font-weight:var(--mw)}
 .wrap{max-width:1120px;margin:0 auto}
 .rot{font:700 13px var(--texto);letter-spacing:.18em;text-transform:uppercase;color:var(--musgo)}
-h2{font:600 clamp(34px,5vw,52px)/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;color:var(--musgo);margin:10px 0 14px;text-wrap:balance}
-h2 .mao{color:var(--terracota-escura);font-size:1.08em}
+h2{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:clamp(34px,5vw,52px);line-height:1.02;color:var(--musgo);margin:10px 0 14px;text-wrap:balance}
+h2 .M{color:var(--terra-esc);font-size:calc(1.08em * var(--ms))}
 .lead{max-width:62ch;color:#3a352d}
 section{padding-block:72px;border-top:1.5px solid rgba(63,74,43,.14)}
 .grao{position:fixed;inset:0;pointer-events:none;opacity:.2;mix-blend-mode:multiply;z-index:50;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .18  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(244,237,221,.92);backdrop-filter:blur(8px);margin:0 -20px;padding:12px 20px;border-bottom:1px solid rgba(63,74,43,.12)}
-nav{overflow:hidden}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(244,237,221,.94);backdrop-filter:blur(8px);margin:0 -20px;padding:12px 20px;border-bottom:1px solid rgba(63,74,43,.12);overflow:hidden}
 nav .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;min-width:0;width:100%}
-.hero>*,.combo>*,.feedbox>*,.fotos>*,.tipos>*,.tres>*,.gal>*{min-width:0}
-.celular{width:100%}
 nav a{flex:none;text-decoration:none;color:var(--musgo);font:500 15px var(--texto);padding:7px 14px;border-radius:99px;border:1.5px solid rgba(63,74,43,.3)}
 nav a:hover,nav a:focus-visible{background:var(--musgo);color:var(--papel);outline:none}
-/* hero */
 .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:56px 64px;border:0}
-.hero h1{padding-bottom:.12em;font:600 clamp(70px,11vw,148px)/.86 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;color:var(--musgo);letter-spacing:-.02em;margin:16px 0 8px}
-.hero h1 .mao{display:block;color:var(--terracota-escura);font-size:.72em;transform:rotate(-4deg);margin:0 0 0 .9em;letter-spacing:0;clip-path:inset(0 100% 0 0);animation:escrever 1.6s .4s cubic-bezier(.6,0,.2,1) forwards}
+.hero h1{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:clamp(70px,11vw,148px);line-height:.86;color:var(--musgo);letter-spacing:-.02em;margin:16px 0 8px;padding-bottom:.12em}
+.hero h1 .M{display:block;color:var(--terra-esc);font-size:calc(.72em * var(--ms));transform:rotate(-4deg);margin:0 0 0 .9em;letter-spacing:0;clip-path:inset(0 100% 0 0);animation:escrever 1.6s .4s cubic-bezier(.6,0,.2,1) forwards}
 @keyframes escrever{to{clip-path:inset(0 -10% 0 0)}}
 .hero p{font-size:20px;max-width:34em;color:#3a352d}
 .palavras{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .palavras span{border:1.5px solid var(--musgo);border-radius:99px;padding:6px 15px;font:500 16px var(--texto);color:var(--musgo)}
 .arte{border-radius:18px;overflow:hidden;box-shadow:0 22px 50px rgba(50,40,20,.16);background:var(--areia)}
 .arte img{display:block;width:100%;height:auto}
-.legenda{font:600 22px/1.1 var(--mao);color:var(--cafe);margin-top:10px}
-/* ouvimos */
+.legenda{font-family:var(--mao);font-weight:var(--mw);font-size:22px;line-height:1.1;color:var(--cafe);margin-top:10px}
 .tres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
 .card{background:var(--branco);border-radius:16px;padding:22px 22px 24px}
-.card b{display:block;font:700 13px var(--texto);letter-spacing:.14em;text-transform:uppercase;color:var(--terracota-escura);margin-bottom:8px}
+.card b{display:block;font:700 13px var(--texto);letter-spacing:.14em;text-transform:uppercase;color:var(--terra-esc);margin-bottom:8px}
 .card p{font-size:16px}
-/* paleta */
 .barra{display:flex;height:58px;border-radius:12px;overflow:hidden;margin:24px 0 16px}
 .barra span{display:flex;align-items:flex-end;padding:0 0 7px 9px;font:700 12px var(--texto)}
 .cores{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .cor{border:0;text-align:left;cursor:pointer;background:var(--branco);border-radius:14px;overflow:hidden;font:inherit;color:inherit;transition:transform .15s}
 .cor:hover{transform:translateY(-3px)}
-.cor:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
 .cor i{display:block;height:84px}
 .cor span{display:block;padding:10px 13px 12px;font-size:14px;line-height:1.35}
 .cor strong{display:block;font-size:16px}
-.combo{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:40px;align-items:center}
+.combo{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:40px;align-items:center}
 .escolha{display:flex;flex-direction:column;gap:18px}
 .escolha .op{display:flex;gap:10px;flex-wrap:wrap}
 .escolha button{width:46px;height:46px;border-radius:50%;border:3px solid transparent;cursor:pointer;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.12)}
 .escolha button[aria-pressed=true]{border-color:var(--tinta)}
-.escolha button:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
-.prev{aspect-ratio:4/5;border-radius:12px;padding:28px;display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(50,40,20,.18);transition:background .35s,color .35s}
-.prev .k{font:700 11px var(--texto);letter-spacing:.18em;text-transform:uppercase}
-.prev h3{font:600 36px/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;margin-top:14px}
-.prev h3 .mao{display:block;font-size:42px;margin-top:6px;transform:rotate(-3deg);transition:color .35s}
-.prev .pill{margin-top:auto;align-self:flex-end;font:700 13px var(--texto);border-radius:99px;padding:7px 14px;transition:background .35s,color .35s}
 .dica{font-size:15px;color:var(--suave)}
-/* tipografia */
-.campo{display:flex;flex-direction:column;gap:8px;margin:24px 0 18px;max-width:560px}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
+.pares{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.par{background:var(--branco);border:2px solid transparent;border-radius:16px;padding:18px;text-align:left;cursor:pointer;font:inherit;color:inherit;display:flex;flex-direction:column;gap:8px}
+.par[aria-pressed=true]{border-color:var(--musgo);box-shadow:0 10px 24px rgba(50,40,20,.12)}
+.par .nome{font:700 12px var(--texto);letter-spacing:.14em;text-transform:uppercase;color:var(--terra-esc)}
+.par .t{font-size:30px;line-height:1;color:var(--musgo)}
+.par .m{font-size:40px;line-height:1;color:var(--terra-esc)}
+.par .x{font-size:15px;line-height:1.4}
+.par small{font-size:12.5px;color:var(--suave);margin-top:auto}
+.campo{display:flex;flex-direction:column;gap:8px;margin:26px 0 0;max-width:560px}
 .campo label{font:500 15px var(--texto);color:var(--suave)}
 .campo input{font:500 18px var(--texto);padding:14px 16px;border-radius:12px;border:1.5px solid rgba(63,74,43,.35);background:var(--branco);color:var(--tinta)}
-.campo input:focus-visible{outline:3px solid var(--terracota);outline-offset:1px}
-.tipos{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px}
-.tipo{background:var(--branco);border-radius:16px;padding:24px;min-height:200px;display:flex;flex-direction:column}
-.tipo .ex{color:var(--musgo);overflow-wrap:anywhere}
-.tipo small{margin-top:auto;padding-top:16px;font-size:14px;color:var(--suave)}
-#ex1{font:600 46px/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1}
-#ex2{font:700 46px/1 var(--mao);color:var(--terracota-escura)}
-#ex3{font:400 19px/1.5 var(--texto);color:var(--tinta)}
-/* elementos */
 .gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px}
 .gal figure{background:var(--branco);border-radius:16px;overflow:hidden}
 .gal img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;cursor:zoom-in}
 .gal figcaption{padding:12px 16px 14px;font-size:15px}
-/* feed */
-.feedbox{display:grid;grid-template-columns:420px 1fr;gap:36px;margin-top:26px;align-items:start}
-.celular{background:var(--branco);border-radius:28px;padding:18px 14px 20px;box-shadow:0 22px 50px rgba(50,40,20,.16)}
+
+/* ====== POSTS: sistema de layouts (1080x1350 = 100cqw) ====== */
+.post{container-type:inline-size;aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--bg,var(--papel));color:var(--fg,var(--musgo));border-radius:6px}
+.post .in{position:absolute;inset:0;padding:7.4cqw;display:flex;flex-direction:column}
+.meta{display:flex;justify-content:space-between;gap:3cqw;font:700 2.3cqw/1 var(--texto);letter-spacing:.16em;text-transform:uppercase;padding-bottom:2.4cqw;border-bottom:.3cqw solid currentColor;position:relative;z-index:2}
+.rod{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font:600 2.5cqw var(--texto);position:relative;z-index:2}
+.rod .seta{background:var(--ac,var(--limao));color:var(--acfg,var(--musgo));border-radius:99px;padding:1.4cqw 3cqw}
+.tt{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:9.4cqw;line-height:.98;letter-spacing:-.01em}
+.mm{font-family:var(--mao);font-weight:var(--mw);font-size:calc(9.6cqw * var(--ms));line-height:1;color:var(--ac,var(--terracota))}
+.tx{font-family:var(--texto);font-size:3.7cqw;line-height:1.42}
+.ilu{position:absolute;right:-6cqw;bottom:6cqw;width:58cqw;mix-blend-mode:multiply;opacity:.95;z-index:1;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)}
+.L1 .tt{margin-top:9cqw;max-width:82%;position:relative;z-index:2}
+.L1 .mm{display:block;margin-top:2.6cqw;transform:rotate(-3deg);transform-origin:left}
+.L2{--fg:var(--papel)}
+.L2 img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.L2 .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,26,23,.55) 0%,rgba(28,26,23,0) 28%,rgba(28,26,23,0) 48%,rgba(28,26,23,.82) 100%)}
+.L2 .titulo{margin-top:auto;position:relative;z-index:2;margin-bottom:5cqw}
+.L2 .tt{font-size:10.4cqw}
+.L2 .tt b{font-weight:inherit;border:.35cqw solid var(--ac,var(--limao));border-radius:2cqw;padding:0 1.6cqw}
+.L2 .adesivo{position:absolute;right:7cqw;top:17cqw;z-index:3;background:var(--terracota);color:var(--tinta);font-family:var(--mao);font-weight:var(--mw);font-size:calc(5.4cqw * var(--ms));padding:1.6cqw 3.6cqw;border-radius:99px;transform:rotate(7deg)}
+.L2 svg.traco{position:absolute;left:5cqw;top:30cqw;width:60cqw;z-index:2}
+.L2 .rod{margin-top:0}
+.L3{--bg:var(--musgo);--fg:var(--papel)}
+.L3 .texfundo{position:absolute;inset:0;background:url(img/textura.jpg) center/cover;opacity:.9}
+.bilhete{position:relative;z-index:2;margin:9cqw 2cqw 0;background:var(--papel);color:var(--cafe);padding:9cqw 7cqw 8cqw;transform:rotate(-1.6deg);clip-path:polygon(0% 2%,6% 0%,12% 1.6%,19% .4%,27% 2%,35% .6%,43% 1.8%,52% .2%,60% 1.6%,68% .4%,76% 1.9%,84% .3%,92% 1.7%,100% .5%,99.4% 50%,100% 98.2%,93% 100%,85% 98.6%,77% 99.8%,69% 98.4%,60% 99.9%,52% 98.3%,44% 99.7%,36% 98.4%,28% 99.9%,20% 98.5%,12% 99.8%,5% 98.6%,0% 99.6%,.6% 50%)}
+.fita{position:absolute;z-index:3;width:24cqw;height:7cqw;background:rgba(227,212,180,.82);top:calc(9cqw + 7.4cqw + 2cqw);left:50%;transform:translateX(-50%) rotate(-4deg)}
+.bilhete .tt{font-size:7.6cqw;line-height:1.05}
+.bilhete .mm{display:block;margin-top:4cqw;font-size:calc(7.4cqw * var(--ms));transform:rotate(-3deg)}
+.L4 .num{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:30cqw;line-height:.8;color:var(--ac,var(--terracota));margin-top:7cqw}
+.L4 .tt{font-size:7.4cqw;margin-top:2cqw;max-width:90%}
+.L4 ul{list-style:none;margin-top:5cqw;display:grid;gap:3cqw}
+.L4 li{font-family:var(--texto);font-size:3.9cqw;line-height:1.3;display:grid;grid-template-columns:5.5cqw 1fr;align-items:baseline}
+.L4 li::before{content:"";width:2.6cqw;height:2.6cqw;border-radius:50%;background:var(--ac,var(--terracota));transform:translateY(-.2cqw)}
+.L5{--bg:var(--areia);--fg:var(--cafe)}
+.L5 .polaroid{position:absolute;z-index:2;left:8cqw;top:19cqw;width:46cqw;background:var(--branco);padding:2.2cqw 2.2cqw 8cqw;transform:rotate(-4deg);box-shadow:0 2cqw 4cqw rgba(50,40,20,.22)}
+.L5 .polaroid img{display:block;width:100%;aspect-ratio:1/1.12;object-fit:cover}
+.L5 .polaroid .M{position:absolute;left:3cqw;bottom:1.6cqw;font-size:calc(5cqw * var(--ms));color:var(--cafe)}
+.L5 .espec{position:absolute;z-index:1;right:4cqw;top:14cqw;width:50cqw;mix-blend-mode:multiply;transform:rotate(3deg);-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)}
+.L5 .fita{top:17cqw;left:31cqw;width:17cqw;height:5.2cqw;transform:rotate(-12deg)}
+.L5 .titulo{margin-top:auto;position:relative;z-index:2;margin-bottom:4cqw}
+.L5 .tt{font-size:8.6cqw}
+.L5 .tx{margin-top:2cqw;max-width:80%}
+.L5 .rod{margin-top:0}
+
+.layouts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:26px}
+.layouts figure{display:flex;flex-direction:column;gap:10px}
+.layouts figcaption b{display:block;font-size:15px}
+.layouts figcaption span{font-size:14px;color:var(--suave);line-height:1.4;display:block}
+.feedbox{display:grid;grid-template-columns:420px minmax(0,440px);justify-content:start;gap:48px;margin-top:26px;align-items:start}
+.celular{background:var(--branco);border-radius:28px;padding:18px 14px 20px;box-shadow:0 22px 50px rgba(50,40,20,.16);width:100%}
 .perfil{display:flex;align-items:center;gap:14px;padding:4px 6px 14px}
-.avatar{width:64px;height:64px;border-radius:50%;background:var(--musgo);display:grid;place-items:center;color:var(--limao);font:700 30px var(--mao);flex:none}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--musgo);display:grid;place-items:center;color:var(--limao);font-family:var(--mao);font-weight:var(--mw);font-size:30px;flex:none}
 .perfil b{display:block;font-size:16px}
 .perfil span{font-size:13px;color:var(--suave);line-height:1.35;display:block}
 .grade{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-.g{aspect-ratio:4/5;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:9px;font-family:var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:600;font-size:13px;line-height:1.02}
-.g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.g span{position:relative}
-.g .mao{font-size:15px}
-.car{position:relative}
-.trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:0;border-radius:14px;scrollbar-width:none;box-shadow:0 18px 40px rgba(50,40,20,.18)}
+.grade .post{border-radius:0}
+.trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:10px;scrollbar-width:none;box-shadow:0 18px 40px rgba(50,40,20,.18)}
 .trilho::-webkit-scrollbar{display:none}
-.sl{flex:0 0 100%;aspect-ratio:4/5;scroll-snap-align:start;padding:34px 30px;display:flex;flex-direction:column;position:relative}
-.sl .k{font:700 12px var(--texto);letter-spacing:.18em;text-transform:uppercase}
-.sl h3{font:600 clamp(30px,4vw,42px)/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;margin-top:14px}
-.sl h3 .mao{display:block;font-size:1.14em;transform:rotate(-3deg);margin-top:6px}
-.sl p{font-size:18px;margin-top:16px;max-width:30ch}
-.sl .num{margin-top:auto;font:700 13px var(--texto);opacity:.8}
+.trilho .post{flex:0 0 100%;scroll-snap-align:start;border-radius:0}
 .pontos{display:flex;gap:8px;justify-content:center;margin-top:14px}
 .pontos button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(63,74,43,.25);cursor:pointer;padding:0}
 .pontos button[aria-current=true]{background:var(--musgo);width:24px;border-radius:9px}
 .setas{display:flex;gap:8px;justify-content:center;margin-top:10px}
 .setas button{font:500 15px var(--texto);background:var(--branco);border:1.5px solid rgba(63,74,43,.3);border-radius:99px;padding:7px 16px;cursor:pointer;color:var(--musgo)}
-/* fotos */
 .fotos{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;margin-top:26px;align-items:center}
 .fotos img{width:100%;border-radius:16px;display:block;cursor:zoom-in}
 .regras{display:grid;gap:12px}
 .regra{background:var(--branco);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
-.regra i{font:700 26px/1 var(--mao);color:var(--terracota-escura);font-style:normal}
-.fora{background:var(--branco);border:2px dashed var(--terracota-escura);border-radius:16px;padding:22px 24px;margin-top:22px}
+.regra i{font-family:var(--mao);font-weight:var(--mw);font-size:26px;line-height:1;color:var(--terra-esc);font-style:normal}
+.fora{background:var(--branco);border:2px dashed var(--terra-esc);border-radius:16px;padding:22px 24px;margin-top:22px}
 .fora ul{margin:8px 0 0 18px}
-/* opinião */
 .op-lista{display:grid;gap:12px;margin:24px 0 18px}
 .op-item{background:var(--branco);border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 .op-item b{font-size:16px}
-.reacoes{display:flex;gap:6px}
+.reacoes{display:flex;gap:6px;flex-wrap:wrap}
 .reacoes button{font:500 14px var(--texto);border-radius:99px;padding:7px 13px;border:1.5px solid rgba(63,74,43,.3);background:transparent;cursor:pointer;color:var(--tinta)}
 .reacoes button[aria-pressed=true]{background:var(--musgo);color:var(--papel);border-color:var(--musgo)}
+.resumo-esc{background:var(--areia);border-radius:14px;padding:14px 16px;font-size:15px;margin-bottom:16px}
 textarea{width:100%;min-height:120px;font:400 17px/1.5 var(--texto);padding:14px 16px;border-radius:12px;border:1.5px solid rgba(63,74,43,.35);background:var(--branco);color:var(--tinta);resize:vertical}
-textarea:focus-visible,.reacoes button:focus-visible,.setas button:focus-visible,.pontos button:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
 .enviar{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .btn{font:700 17px var(--texto);background:var(--musgo);color:var(--papel);border:0;border-radius:99px;padding:15px 26px;cursor:pointer}
-.btn:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
-#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tinta);color:var(--papel);padding:11px 18px;border-radius:99px;font:500 15px var(--texto);z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn2{font:600 15px var(--texto);background:transparent;color:var(--musgo);border:1.5px solid rgba(63,74,43,.35);border-radius:99px;padding:12px 20px;cursor:pointer}
+.historico{margin-top:18px;font-size:15px;color:var(--suave)}
+.historico li{margin-left:18px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tinta);color:var(--papel);padding:11px 18px;border-radius:99px;font:500 15px var(--texto);z-index:60;opacity:0;transition:opacity .25s;pointer-events:none;max-width:90vw;text-align:center}
 #toast.on{opacity:1}
 #lb{position:fixed;inset:0;background:rgba(20,18,14,.88);z-index:70;display:flex;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
 #lb img{max-width:100%;max-height:100%;border-radius:8px}
 [hidden]{display:none!important}
 footer{padding-top:30px;font-size:14px;color:var(--suave)}
-@media (max-width:860px){.hero,.combo,.feedbox,.fotos{grid-template-columns:1fr}.tres{grid-template-columns:1fr}.cores{grid-template-columns:repeat(2,1fr)}.tipos{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}.celular{max-width:420px}.combo .prev{max-width:340px}}
-@media (prefers-reduced-motion:reduce){.hero h1 .mao{animation:none;clip-path:none}html{scroll-behavior:auto}.cor{transition:none}}
-</style></head><body>
+.hero>*,.combo>*,.feedbox>*,.fotos>*,.tres>*,.gal>*,.pares>*,.layouts>*{min-width:0}
+@media (max-width:980px){.layouts{grid-template-columns:repeat(3,1fr)}.pares{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){.hero,.combo,.feedbox,.fotos{grid-template-columns:1fr}.tres{grid-template-columns:1fr}.cores{grid-template-columns:repeat(2,1fr)}.gal{grid-template-columns:1fr 1fr}.layouts{grid-template-columns:1fr 1fr}.celular{max-width:440px}.combo #prev{max-width:360px}}
+@media (max-width:520px){.pares{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.hero h1 .M{animation:none;clip-path:none}html{scroll-behavior:auto}.cor{transition:none}}
+</style></head><body data-par="a">
 <div class="grao" aria-hidden="true"></div>
 
 <div class="wrap">
 <header class="hero">
   <div>
     <div class="rot">Teacher Ana · moodboard da marca</div>
-    <h1>Florescer<span class="mao">a voz</span></h1>
+    <h1>Florescer<span class="M">a voz</span></h1>
     <p>Uma marca que acolhe o erro e chama pra falar. Natural e terrosa como o seu mundo, com a leveza de quem conversa com todo mundo na festa. A ciência da fala, contada como se fosse magia.</p>
     <div class="palavras"><span>acolhimento</span><span>coragem</span><span>curiosidade</span><span>natureza</span><span>leveza</span></div>
   </div>
   <figure>
-    <div class="arte"><img src="img/anatomia.jpg" alt="Ilustração científica de um perfil com os músculos da fala e folhas brotando da boca" data-zoom></div>
+    <div class="arte"><img src="img/anatomia.jpg" alt="Ilustração científica de um perfil com os músculos da fala e a voz virando ramo florido" data-zoom></div>
     <figcaption class="legenda">os músculos da fala, florescendo</figcaption>
   </figure>
 </header>
 </div>
 
 <nav aria-label="Seções"><div class="wrap">
-  <a href="#ouvimos">O que ouvimos</a><a href="#paleta">Cores</a><a href="#tipografia">Fontes</a><a href="#elementos">Elementos</a><a href="#feed">Feed</a><a href="#fotos">Fotos</a><a href="#opiniao">Sua opinião</a>
+  <a href="#ouvimos">O que ouvimos</a><a href="#paleta">Cores</a><a href="#fontes">Fontes</a><a href="#layouts">Layouts</a><a href="#feed">Feed</a><a href="#elementos">Elementos</a><a href="#fotos">Fotos</a><a href="#opiniao">Sua opinião</a>
 </div></nav>
 
 <main class="wrap">
 <section id="ouvimos">
   <div class="rot">01 · O que ouvimos de você</div>
-  <h2 class="f">A marca nasce <span class="mao">da sua história</span></h2>
+  <h2>A marca nasce <span class="M">da sua história</span></h2>
   <div class="tres">
     <div class="card"><b>Você</b><p>Bióloga que reprovou em inglês na escola e destravou aos 22. Ensina com autenticidade, aceitação e empatia: parceira de jornada, nunca juíza de caneta vermelha.</p></div>
     <div class="card"><b>Sua aluna</b><p>Profissional cansada que entende tudo, mas trava na hora de falar. "Dá branco", "congelo na pergunta". Quer reuniões, entrevistas e congressos em inglês, com tranquilidade.</p></div>
@@ -172,82 +203,69 @@ footer{padding-top:30px;font-size:14px;color:var(--suave)}
 
 <section id="paleta">
   <div class="rot">02 · Cores</div>
-  <h2 class="f">A paleta é a sua, <span class="mao">só organizada</span></h2>
+  <h2>A paleta é a sua, <span class="M">só organizada</span></h2>
   <p class="lead">Mantive as cores que você mandou e defini quanto cada uma aparece no feed. O verde-limão entra pequeno, como um respiro. Toque numa cor para copiar o código.</p>
   <div class="barra" aria-hidden="true">
     <span style="flex:34;background:var(--papel);color:var(--musgo);box-shadow:inset 0 0 0 1.5px var(--areia)">34%</span><span style="flex:24;background:var(--musgo);color:var(--papel)">24%</span><span style="flex:13;background:var(--areia);color:var(--cafe)">13%</span><span style="flex:9;background:var(--terracota);color:var(--tinta)">9%</span><span style="flex:8;background:var(--cafe);color:var(--papel)">8%</span><span style="flex:5;background:var(--limao);color:var(--musgo)">5%</span><span style="flex:4;background:var(--jeans);color:var(--papel)">4%</span><span style="flex:3;background:var(--tinta);color:var(--papel)">3%</span>
   </div>
   <div class="cores" id="cores"></div>
-
   <div class="combo">
     <div class="escolha">
       <div class="rot">Teste uma combinação</div>
       <div><p class="dica">Fundo do post</p><div class="op" id="fundos" role="group" aria-label="Fundo"></div></div>
       <div><p class="dica">Cor de destaque</p><div class="op" id="destaques" role="group" aria-label="Destaque"></div></div>
-      <p class="dica">Toda combinação daqui funciona dentro da marca. Se tiver uma favorita, conta pra gente lá no fim.</p>
+      <p class="dica">Só aparecem combinações que ficam legíveis. A que você testar por último vai junto com a sua resposta.</p>
     </div>
-    <div class="prev" id="prev"><div class="k">Pronúncia · semana 1</div><h3>Os músculos que fazem você falar inglês<span class="mao">e como acordar eles</span></h3><span class="pill">arrasta →</span></div>
+    <div id="prev"></div>
   </div>
 </section>
 
-<section id="tipografia">
+<section id="fontes">
   <div class="rot">03 · Fontes</div>
-  <h2 class="f">Uma serifa macia, <span class="mao">uma letra à mão</span></h2>
-  <p class="lead">A serifa dá autoridade sem ficar fria. A letra à mão é o seu jeito de falar, e entra só numa palavra por vez. Escreva uma frase sua e veja nas três fontes.</p>
-  <div class="campo"><label for="frase">Sua frase</label><input id="frase" type="text" maxlength="60" value="Pode tentar, eu tô aqui"></div>
-  <div class="tipos">
-    <div class="tipo"><div class="ex" id="ex1"></div><small>Fraunces · títulos</small></div>
-    <div class="tipo"><div class="ex" id="ex2"></div><small>Caveat · destaque à mão</small></div>
-    <div class="tipo"><div class="ex" id="ex3"></div><small>DM Sans · texto dos carrosséis e legendas</small></div>
-  </div>
+  <h2>Escolha a dupla <span class="M">que soa como você</span></h2>
+  <p class="lead">Cada opção junta uma fonte de título, uma letra à mão para uma palavra em destaque e uma fonte de texto. Ao escolher, todos os posts desta página mudam juntos. Escreva uma frase sua para ver nas quatro.</p>
+  <div class="campo"><label for="frase">Sua frase</label><input id="frase" type="text" maxlength="48" value="Pode tentar, eu tô aqui"></div>
+  <div class="pares" id="pares" role="group" aria-label="Combinações de fontes"></div>
 </section>
 
-<section id="elementos">
-  <div class="rot">04 · Elementos e texturas</div>
-  <h2 class="f">Desenhos que <span class="mao">brotam</span></h2>
-  <p class="lead">Nada de bandeira nem ícone de escola. Os elementos vêm da sua história: a voz que vira planta, o cérebro florescendo, papel de verdade com textura.</p>
-  <div class="gal">
-    <figure><img src="img/elementos.jpg" alt="Folha de elementos desenhados à mão" data-zoom><figcaption>Elementos para os posts: som virando ramo, cérebro florescendo, sublinhados</figcaption></figure>
-    <figure><img src="img/colagem.jpg" alt="Colagem de papéis rasgados nas cores da marca" data-zoom><figcaption>Fundo de colagem de papel, com espaço para o texto</figcaption></figure>
-    <figure><img src="img/textura.jpg" alt="Textura de papel verde musgo com sombra de folhas" data-zoom><figcaption>Textura verde musgo para capas</figcaption></figure>
-  </div>
+<section id="layouts">
+  <div class="rot">04 · Layouts dos templates</div>
+  <h2>Cinco layouts, <span class="M">um só jeito</span></h2>
+  <p class="lead">Todos têm a mesma margem, a mesma barra no topo com o seu @ e o mesmo rodapé. É isso que faz o feed parecer de uma marca só, mesmo com cores diferentes. São estes que vão para o seu Canva.</p>
+  <div class="layouts" id="lays"></div>
 </section>
 
 <section id="feed">
   <div class="rot">05 · Como fica no seu Instagram</div>
-  <h2 class="f">O feed <span class="mao">ganha vida</span></h2>
-  <p class="lead">Uma prévia de como os templates conversam entre si. Ao lado, um carrossel de exemplo para deslizar, no tema que você quer começar: os músculos da fala.</p>
+  <h2>O feed <span class="M">ganha vida</span></h2>
+  <p class="lead">O mesmo sistema aplicado no perfil, com as cores se revezando. Ao lado, um carrossel de exemplo para deslizar, no tema que você quer começar: os músculos da fala.</p>
   <div class="feedbox">
     <div class="celular">
       <div class="perfil"><div class="avatar" aria-hidden="true">A</div><div><b>@anaroque.teacher</b><span>Teacher Ana · inglês pra quem entende tudo, mas trava na hora de falar</span></div></div>
-      <div class="grade" aria-label="Prévia do feed">
-        <div class="g" style="background:var(--musgo);color:var(--papel)"><span>Os músculos da fala <span class="mao" style="color:var(--limao)">semana 1</span></span></div>
-        <div class="g" style="color:var(--papel)"><img src="img/pratica.jpg" alt=""><span style="text-shadow:0 1px 6px rgba(0,0,0,.5)">Treine no espelho</span></div>
-        <div class="g" style="background:var(--papel);color:var(--cafe)"><span>"Pode tentar. <span class="mao" style="color:var(--terracota-escura)">Eu tô aqui.</span>"</span></div>
-        <div class="g"><img src="img/colagem.jpg" alt=""><span style="color:var(--musgo)">Entendia tudo, <span class="mao" style="color:var(--terracota-escura)">não saía</span></span></div>
-        <div class="g" style="background:var(--terracota);color:var(--tinta)"><span>Por que dá branco?</span></div>
-        <div class="g" style="background:var(--areia);color:var(--musgo)"><span>TH sem medo <span class="mao" style="color:var(--terracota-escura)">2 min por dia</span></span></div>
-        <div class="g" style="background:var(--papel)"><img src="img/anatomia.jpg" alt=""></div>
-        <div class="g" style="background:var(--jeans);color:var(--papel)"><span>Reunião em inglês: 3 frases</span></div>
-        <div class="g" style="background:var(--cafe);color:var(--papel)"><span>Histórias de <span class="mao" style="color:var(--limao)">alunas</span></span></div>
-      </div>
+      <div class="grade" id="grade" aria-label="Prévia do feed"></div>
     </div>
-    <div class="car">
-      <div class="trilho" id="trilho" tabindex="0" aria-label="Carrossel de exemplo, deslize para os lados">
-        <div class="sl" style="background:var(--musgo) url(img/textura.jpg) center/cover;color:var(--papel)"><div class="k" style="color:var(--limao)">Pronúncia · semana 1</div><h3>Os músculos que fazem você falar inglês<span class="mao" style="color:var(--limao)">e como acordar eles</span></h3><span class="num">1/4 · arrasta →</span></div>
-        <div class="sl" style="background:var(--papel);color:var(--musgo)"><div class="k" style="color:var(--terracota-escura)">Por que trava</div><h3>Sua boca aprendeu <span class="mao" style="color:var(--terracota-escura)">português primeiro</span></h3><p style="color:var(--tinta)">Cada língua usa os músculos do rosto de um jeito. Por isso o "th" parece impossível no começo. Não é falta de talento: é treino de músculo.</p><span class="num">2/4</span></div>
-        <div class="sl" style="background:var(--areia);color:var(--cafe)"><div class="k">Prática da semana</div><h3>O som do <span class="mao" style="color:var(--terracota-escura)">TH</span></h3><p style="color:var(--tinta)">Ponha a ponta da língua entre os dentes e sopre devagar. Agora diga "think". Sem pressa, na frente do espelho.</p><span class="num">3/4</span></div>
-        <div class="sl" style="background:var(--terracota);color:var(--tinta)"><div class="k">Pra levar</div><h3>Pode tentar. <span class="mao" style="color:var(--papel)">Eu tô aqui.</span></h3><p>Salve esse post e pratique 2 minutos por dia. Me conta nos comentários qual som mais te trava.</p><span class="num">4/4</span></div>
-      </div>
+    <div>
+      <div class="trilho" id="trilho" tabindex="0" aria-label="Carrossel de exemplo, deslize para os lados"></div>
       <div class="pontos" id="pontos"></div>
       <div class="setas"><button type="button" id="ant">← anterior</button><button type="button" id="prox">próximo →</button></div>
     </div>
   </div>
 </section>
 
+<section id="elementos">
+  <div class="rot">06 · Elementos e texturas</div>
+  <h2>Desenhos que <span class="M">brotam</span></h2>
+  <p class="lead">Nada de bandeira nem ícone de escola. Os elementos vêm da sua história: a voz que vira planta, o cérebro florescendo, papel de verdade com textura.</p>
+  <div class="gal">
+    <figure><img src="img/elementos.jpg" alt="Folha de elementos desenhados à mão" data-zoom><figcaption>Elementos para os posts: som virando ramo, cérebro florescendo, sublinhados</figcaption></figure>
+    <figure><img src="img/colagem.jpg" alt="Colagem de papéis rasgados nas cores da marca" data-zoom><figcaption>Fundo de colagem de papel, com espaço para o texto</figcaption></figure>
+    <figure><img src="img/textura.jpg" alt="Textura de papel verde musgo com sombra de folhas" data-zoom><figcaption>Textura verde musgo para capas e bilhetes</figcaption></figure>
+  </div>
+</section>
+
 <section id="fotos">
-  <div class="rot">06 · Suas fotos</div>
-  <h2 class="f">A rotina real, <span class="mao">em luz quente</span></h2>
+  <div class="rot">07 · Suas fotos</div>
+  <h2>A rotina real, <span class="M">em luz quente</span></h2>
   <div class="fotos">
     <img src="img/pratica.jpg" alt="Mãos segurando um espelho ao lado de um caderno de pronúncia" data-zoom>
     <div class="regras">
@@ -257,18 +275,20 @@ footer{padding-top:30px;font-size:14px;color:var(--suave)}
       <div class="regra"><i>4</i><p><b>Roupas nas cores da marca:</b> verdes, terrosos, bege e jeans aparecem sozinhos nas fotos.</p></div>
     </div>
   </div>
-  <div class="fora"><div class="rot" style="color:var(--terracota-escura)">Fica de fora</div>
+  <div class="fora"><div class="rot" style="color:var(--terra-esc)">Fica de fora</div>
     <ul><li>Bandeiras e o azul-vermelho de EUA e Inglaterra</li><li>Cara corporativa de escola tradicional</li><li>Monograma e balão de fala sozinho (é a cara do Take it Easy)</li><li>Tom de coach e promessa de fluência rápida</li></ul></div>
 </section>
 
 <section id="opiniao">
-  <div class="rot">07 · Sua opinião</div>
-  <h2 class="f">O que você <span class="mao">achou?</span></h2>
-  <p class="lead">Marque cada parte e escreva o que quiser. No fim, toque em "Copiar minha resposta" e cole no WhatsApp. Sem o seu ok, a gente não segue para o logo.</p>
+  <div class="rot">08 · Sua opinião</div>
+  <h2>O que você <span class="M">achou?</span></h2>
+  <p class="lead">Marque cada parte, escreva o que quiser e toque em "Enviar minha resposta". Ela chega direto pra gente, com tudo o que você escolheu nesta página. Pode enviar mais de uma vez: cada envio fica registrado.</p>
   <div class="op-lista" id="oplista"></div>
+  <div class="resumo-esc" id="resumo"></div>
   <label for="obs" class="dica">Comentários livres (o que mudaria, o que amou)</label>
   <textarea id="obs" placeholder="Ex.: amei as cores, queria o verde-limão um pouco mais presente..."></textarea>
-  <div class="enviar"><button class="btn" type="button" id="copiar">Copiar minha resposta</button><span class="dica">Depois é só colar na conversa do WhatsApp.</span></div>
+  <div class="enviar"><button class="btn" type="button" id="enviar">Enviar minha resposta</button><button class="btn2" type="button" id="copiar">Copiar texto</button></div>
+  <ul class="historico" id="historico"></ul>
 </section>
 <footer>Imagens ilustrativas de direção. As fotos finais serão as suas. Feito pela Rama.</footer>
 </main>
@@ -277,73 +297,158 @@ footer{padding-top:30px;font-size:14px;color:var(--suave)}
 <div id="lb" hidden></div>
 
 <script>
-const C = [['Papel','#F4EDDD','fundo principal'],['Verde musgo','#3F4A2B','autoridade, títulos'],['Bege areia','#E3D4B4','cartões'],['Terracota','#C4623A','energia, destaque'],['Marrom café','#4A3426','acolhimento'],['Verde-limão','#C9DB5E','pop, só pequeno'],['Jeans','#4F6D8F','variação'],['Preto tinta','#1C1A17','texto']];
-const toast = (t) => { const e = document.getElementById('toast'); e.textContent = t; e.classList.add('on'); clearTimeout(e._t); e._t = setTimeout(() => e.classList.remove('on'), 1800); };
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const toast = (t) => { const e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(e._t); e._t = setTimeout(() => e.classList.remove('on'), 2400); };
 const copiar = async (t) => { try { await navigator.clipboard.writeText(t); return true; } catch { const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); let ok = false; try { ok = document.execCommand('copy'); } catch {} a.remove(); return ok; } };
-document.getElementById('cores').innerHTML = C.map(([n, h, u]) => `<button class="cor" type="button" data-hex="${h}"><i style="background:${h};${h === '#F4EDDD' ? 'box-shadow:inset 0 0 0 1.5px #E3D4B4' : ''}"></i><span><strong>${n}</strong>${h} · ${u}</span></button>`).join('');
-document.querySelectorAll('.cor').forEach((b) => b.addEventListener('click', async () => { toast((await copiar(b.dataset.hex)) ? `${b.dataset.hex} copiado` : b.dataset.hex); }));
+const V = { musgo: '#3F4A2B', cafe: '#4A3426', tinta: '#1C1A17', papel: '#F4EDDD', areia: '#E3D4B4', terracota: '#C4623A', terraEsc: '#A24B28', limao: '#C9DB5E', jeans: '#4F6D8F' };
+const H = '@anaroque.teacher';
 
-// teste de combinação: cada fundo tem um texto legível fixo; o destaque só colore a palavra à mão e o botão
-const F = { Papel: ['#F4EDDD', '#3F4A2B'], 'Verde musgo': ['#3F4A2B', '#F4EDDD'], 'Bege areia': ['#E3D4B4', '#4A3426'], 'Marrom café': ['#4A3426', '#F4EDDD'] };
-const D = { 'Verde-limão': '#C9DB5E', Terracota: '#C4623A', Jeans: '#4F6D8F' };
-const ok = { Papel: ['Terracota', 'Jeans'], 'Verde musgo': ['Verde-limão', 'Terracota'], 'Bege areia': ['Terracota', 'Jeans'], 'Marrom café': ['Verde-limão', 'Terracota'] };
-let fundo = 'Verde musgo', dest = 'Verde-limão';
-const prev = document.getElementById('prev');
-function pintar() {
-  if (!ok[fundo].includes(dest)) dest = ok[fundo][0];
-  const [bg, fg] = F[fundo]; const d = D[dest];
-  const legivel = (bg === '#F4EDDD' || bg === '#E3D4B4') ? (dest === 'Terracota' ? '#A24B28' : d) : d;
-  prev.style.background = bg; prev.style.color = fg;
-  prev.querySelector('.mao').style.color = legivel;
-  const pill = prev.querySelector('.pill'); pill.style.background = d; pill.style.color = dest === 'Verde-limão' ? '#3F4A2B' : (dest === 'Terracota' ? '#1C1A17' : '#F4EDDD');
-  prev.querySelector('.k').style.color = legivel;
-  document.querySelectorAll('#fundos button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.n === fundo));
-  document.querySelectorAll('#destaques button').forEach((b) => { const pode = ok[fundo].includes(b.dataset.n); b.disabled = !pode; b.style.opacity = pode ? 1 : .25; b.setAttribute('aria-pressed', b.dataset.n === dest); });
+// cada layout recebe as cores e o conteúdo; a estrutura (margem, barra do topo, rodapé) é fixa
+const est = (c) => `--bg:${c.bg};--fg:${c.fg};--ac:${c.ac};--acfg:${c.acfg || V.musgo}`;
+const L = {
+  L1: (c, d) => `<div class="post L1" style="${est(c)}">${d.tex ? '<div class="texfundo" style="position:absolute;inset:0;background:url(img/textura.jpg) center/cover"></div>' : ''}${d.ilu ? `<img class="ilu" src="img/anatomia.jpg" alt="">` : ''}<div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || '01/05'}</span></div><div class="tt">${d.t}<span class="mm">${d.m}</span></div><div class="rod"><span>${H}</span><span class="seta">arrasta →</span></div></div></div>`,
+  L2: (c, d) => `<div class="post L2" style="${est(c)}"><img class="fundo" src="img/${d.img || 'pratica'}.jpg" alt=""><div class="scrim"></div><svg class="traco" viewBox="0 0 300 120" fill="none" aria-hidden="true"><path d="M5 100 C 60 20, 120 120, 170 60 S 260 10, 295 40" stroke="${c.ac}" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/></svg><span class="adesivo">${d.ad}</span><div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || 'reel'}</span></div><div class="titulo"><div class="tt">${d.t}</div></div><div class="rod"><span>${H}</span><span>${d.r || '▶ assista'}</span></div></div></div>`,
+  L3: (c, d) => `<div class="post L3" style="${est(c)}">${c.tex !== false ? '<div class="texfundo"></div>' : ''}<div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || ''}</span></div><span class="fita"></span><div class="bilhete"><div class="tt">${d.t}</div><span class="mm" style="color:${c.mm || V.terraEsc}">${d.m}</span></div><div class="rod"><span>${H}</span><span>salve ♡</span></div></div></div>`,
+  L4: (c, d) => `<div class="post L4" style="${est(c)}"><div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || 'lista'}</span></div><div class="num">${d.num}</div><div class="tt">${d.t}</div><ul>${d.itens.map((i) => `<li>${i}</li>`).join('')}</ul><div class="rod"><span>${H}</span><span class="seta">salve pra treinar</span></div></div></div>`,
+  L5: (c, d) => `<div class="post L5" style="${est(c)}"><img class="espec" src="img/anatomia.jpg" alt=""><div class="polaroid"><img src="img/${d.img || 'pratica'}.jpg" alt=""><span class="M">${d.leg}</span></div><span class="fita"></span><div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || ''}</span></div><div class="titulo"><div class="tt">${d.t}</div><p class="tx">${d.x}</p></div><div class="rod"><span>${H}</span><span>leia a legenda ↓</span></div></div></div>`,
+};
+const C = {
+  musgo: { bg: V.musgo, fg: V.papel, ac: V.limao, acfg: V.musgo, mm: V.terraEsc },
+  papel: { bg: V.papel, fg: V.musgo, ac: V.terraEsc, acfg: V.papel },
+  areia: { bg: V.areia, fg: V.cafe, ac: V.terraEsc, acfg: V.papel },
+  terra: { bg: V.terracota, fg: V.tinta, ac: V.papel, acfg: V.tinta, mm: V.musgo },
+  cafe: { bg: V.cafe, fg: V.papel, ac: V.limao, acfg: V.cafe, mm: V.terraEsc },
+  jeans: { bg: V.jeans, fg: V.papel, ac: V.limao, acfg: V.jeans },
+};
+const LAYINFO = [
+  ['L1', 'Capa de carrossel', 'O tema da semana, com ilustração. Abre todo carrossel.', C.papel, { tag: 'Pronúncia · semana 1', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', ilu: true }],
+  ['L2', 'Capa de reel / foto', 'Sua foto com o título por cima. Para reels e histórias de alunas.', C.musgo, { tag: 'Histórias de alunas', t: 'Entendia tudo, mas <b>não saía</b>', ad: 'história real' }],
+  ['L3', 'Bilhete', 'Frase, dica rápida ou recado. Papel rasgado com fita.', C.musgo, { tag: 'Recado da teacher', t: 'Não existe erro bobo. Existe comunicação em construção.', m: 'Teacher Ana' }],
+  ['L4', 'Lista numerada', 'Frases prontas, erros comuns, passo a passo.', C.areia, { tag: 'Inglês no trabalho', num: '3', t: 'frases pra abrir uma reunião', itens: ['Thanks for joining, everyone', 'Let’s get started', 'Quick question before we begin'] }],
+  ['L5', 'Colagem', 'Explicações com um toque de ciência: foto, desenho e texto curto.', C.areia, { tag: 'Por trás da fala', t: 'Por que dá branco?', x: 'Quando o cérebro entra em alerta, a fala é a primeira a travar.', leg: 'respira', img: 'pratica' }],
+];
+
+function desenharTudo() {
+  $('#lays').innerHTML = LAYINFO.map(([id, nome, uso, c, d]) => `<figure>${L[id](c, d)}<figcaption><b>${id} · ${nome}</b><span>${uso}</span></figcaption></figure>`).join('');
+  const F = [
+    L.L1(C.musgo, { tag: 'Pronúncia · 01', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', tex: true }),
+    L.L2(C.musgo, { tag: 'Reel', t: 'Treine no <b>espelho</b>', ad: '2 min por dia' }),
+    L.L3(C.musgo, { tag: 'Recado', t: 'Pode tentar. Eu tô aqui pra te apoiar.', m: 'Teacher Ana' }),
+    L.L4(C.areia, { tag: 'Trabalho', num: '3', t: 'frases pra abrir uma reunião', itens: ['Thanks for joining', 'Let’s get started', 'Quick question first'] }),
+    L.L5(C.areia, { tag: 'Ciência da fala', t: 'Por que dá branco?', x: 'O cérebro em alerta trava a fala.', leg: 'respira' }),
+    L.L1(C.papel, { tag: 'Pronúncia · 02', t: 'O som do TH sem medo', m: 'língua entre os dentes', ilu: true }),
+    L.L3({ ...C.terra, tex: false }, { tag: 'Recado', t: 'Não existe erro bobo.', m: 'comunicação em construção' }),
+    L.L4(C.jeans, { tag: 'Pronúncia', num: '5', t: 'palavras que travam todo mundo', itens: ['comfortable', 'thought', 'world'] }),
+    L.L2(C.cafe, { tag: 'Histórias', t: 'Entendia tudo, mas <b>não saía</b>', ad: 'história real', img: 'colagem' }),
+  ];
+  $('#grade').innerHTML = F.join('');
+  const S = [
+    L.L1(C.musgo, { tag: 'Pronúncia · semana 1', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', n: '01/05', tex: true }),
+    L.L5(C.areia, { tag: 'Por que trava', t: 'Sua boca aprendeu português primeiro', x: 'Cada língua usa os músculos do rosto de um jeito. Não é falta de talento: é treino de músculo.', leg: 'músculo, não talento', n: '02/05' }),
+    L.L4(C.papel, { tag: 'Prática da semana', num: 'TH', t: 'em 3 passos, na frente do espelho', itens: ['Ponta da língua entre os dentes', 'Sopre o ar devagar', 'Agora diga: think, three, thanks'], n: '03/05' }),
+    L.L3(C.musgo, { tag: 'Lembrete', t: 'Errar o TH faz parte. Treinar 2 minutos por dia muda tudo.', m: 'sem pressa', n: '04/05' }),
+    L.L2(C.musgo, { tag: 'Pra levar', t: 'Pode tentar. <b>Eu tô aqui.</b>', ad: 'salve ♡', n: '05/05', r: 'me conta nos comentários' }),
+  ];
+  $('#trilho').innerHTML = S.join('');
+  pintarCombo();
 }
-document.getElementById('fundos').innerHTML = Object.entries(F).map(([n, [h]]) => `<button type="button" data-n="${n}" aria-label="${n}" title="${n}" style="background:${h}"></button>`).join('');
-document.getElementById('destaques').innerHTML = Object.entries(D).map(([n, h]) => `<button type="button" data-n="${n}" aria-label="${n}" title="${n}" style="background:${h}"></button>`).join('');
-document.querySelectorAll('#fundos button').forEach((b) => b.onclick = () => { fundo = b.dataset.n; pintar(); });
-document.querySelectorAll('#destaques button').forEach((b) => b.onclick = () => { dest = b.dataset.n; pintar(); });
-pintar();
 
-// fontes ao vivo
-const fr = document.getElementById('frase');
-const tip = () => { const v = fr.value.trim() || 'Pode tentar, eu tô aqui'; ['ex1', 'ex2', 'ex3'].forEach((id) => document.getElementById(id).textContent = v); };
-fr.addEventListener('input', tip); tip();
+const CORES = [['Papel', '#F4EDDD', 'fundo principal'], ['Verde musgo', '#3F4A2B', 'autoridade, títulos'], ['Bege areia', '#E3D4B4', 'cartões'], ['Terracota', '#C4623A', 'energia, destaque'], ['Marrom café', '#4A3426', 'acolhimento'], ['Verde-limão', '#C9DB5E', 'pop, só pequeno'], ['Jeans', '#4F6D8F', 'variação'], ['Preto tinta', '#1C1A17', 'texto']];
+$('#cores').innerHTML = CORES.map(([n, h, u]) => `<button class="cor" type="button" data-hex="${h}"><i style="background:${h};${h === '#F4EDDD' ? 'box-shadow:inset 0 0 0 1.5px #E3D4B4' : ''}"></i><span><strong>${n}</strong>${h} · ${u}</span></button>`).join('');
+document.querySelectorAll('.cor').forEach((b) => b.addEventListener('click', async () => toast((await copiar(b.dataset.hex)) ? `${b.dataset.hex} copiado` : b.dataset.hex)));
+const FUN = { Papel: [V.papel, V.musgo], 'Verde musgo': [V.musgo, V.papel], 'Bege areia': [V.areia, V.cafe], 'Marrom café': [V.cafe, V.papel] };
+const DES = { 'Verde-limão': V.limao, Terracota: V.terracota, Jeans: V.jeans };
+const OK = { Papel: ['Terracota', 'Jeans'], 'Verde musgo': ['Verde-limão', 'Terracota'], 'Bege areia': ['Terracota', 'Jeans'], 'Marrom café': ['Verde-limão', 'Terracota'] };
+let fundo = 'Verde musgo', dest = 'Verde-limão';
+function pintarCombo() {
+  if (!OK[fundo].includes(dest)) dest = OK[fundo][0];
+  const [bg, fg] = FUN[fundo]; const claro = bg === V.papel || bg === V.areia;
+  const ac = claro && dest === 'Terracota' ? V.terraEsc : DES[dest];
+  const acfg = dest === 'Verde-limão' ? V.musgo : (dest === 'Terracota' ? (claro ? V.papel : V.tinta) : V.papel);
+  $('#prev').innerHTML = L.L1({ bg, fg, ac, acfg }, { tag: 'Pronúncia · semana 1', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', ilu: claro });
+  document.querySelectorAll('#fundos button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.n === fundo));
+  document.querySelectorAll('#destaques button').forEach((b) => { const pode = OK[fundo].includes(b.dataset.n); b.disabled = !pode; b.style.opacity = pode ? 1 : .25; b.setAttribute('aria-pressed', b.dataset.n === dest); });
+  resumo();
+}
+$('#fundos').innerHTML = Object.entries(FUN).map(([n, [h]]) => `<button type="button" data-n="${n}" aria-label="${n}" title="${n}" style="background:${h}"></button>`).join('');
+$('#destaques').innerHTML = Object.entries(DES).map(([n, h]) => `<button type="button" data-n="${n}" aria-label="${n}" title="${n}" style="background:${h}"></button>`).join('');
+document.querySelectorAll('#fundos button').forEach((b) => b.onclick = () => { fundo = b.dataset.n; pintarCombo(); salvar(); });
+document.querySelectorAll('#destaques button').forEach((b) => b.onclick = () => { dest = b.dataset.n; pintarCombo(); salvar(); });
 
-// carrossel
-const tr = document.getElementById('trilho'), sls = [...tr.children], pts = document.getElementById('pontos');
-pts.innerHTML = sls.map((_, i) => `<button type="button" aria-label="Lâmina ${i + 1}"></button>`).join('');
+const PARES = [
+  ['a', 'Orgânica', 'Fraunces', 'Caveat', 'DM Sans', "'Fraunces'", "'Caveat'", "'DM Sans'", "'SOFT' 100,'WONK' 1", 600, 700],
+  ['b', 'Editorial', 'Gloock', 'Shadows Into Light', 'Work Sans', "'Gloock'", "'Shadows Into Light'", "'Work Sans'", 'normal', 400, 400],
+  ['c', 'Amigável', 'Young Serif', 'Patrick Hand', 'Nunito', "'Young Serif'", "'Patrick Hand'", "'Nunito'", 'normal', 400, 400],
+  ['d', 'Moderna', 'Bricolage Grotesque', 'Caveat Brush', 'Figtree', "'Bricolage Grotesque'", "'Caveat Brush'", "'Figtree'", 'normal', 700, 400],
+];
+let par = 'a';
+function desenharPares() {
+  const fr = ($('#frase').value.trim() || 'Pode tentar, eu tô aqui');
+  const ps = fr.split(' '); const ult = ps.length > 1 ? ps.pop() : ''; const ini = ps.join(' ');
+  $('#pares').innerHTML = PARES.map(([id, nome, t, m, x, ft, fm, fx, fvs, tw, mw]) => `<button type="button" class="par" data-p="${id}" aria-pressed="${id === par}"><span class="nome">${nome}</span><span class="t" style="font-family:${ft};font-variation-settings:${fvs};font-weight:${tw}">${esc(ini)}</span><span class="m" style="font-family:${fm};font-weight:${mw}">${esc(ult)}</span><span class="x" style="font-family:${fx}">Texto do carrossel nessa fonte, leve de ler no celular.</span><small>${t} + ${m} + ${x}</small></button>`).join('');
+  document.querySelectorAll('.par').forEach((b) => b.onclick = () => { par = b.dataset.p; document.body.dataset.par = par; desenharPares(); resumo(); salvar(); });
+}
+$('#frase').addEventListener('input', desenharPares);
+
+const tr = $('#trilho');
+const atual = () => Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth));
 const ir = (i) => tr.scrollTo({ left: i * tr.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-const atual = () => Math.round(tr.scrollLeft / tr.clientWidth);
-const marcar = () => [...pts.children].forEach((b, i) => b.setAttribute('aria-current', i === atual()));
-tr.addEventListener('scroll', () => requestAnimationFrame(marcar)); marcar();
-[...pts.children].forEach((b, i) => b.onclick = () => ir(i));
-document.getElementById('ant').onclick = () => ir(Math.max(0, atual() - 1));
-document.getElementById('prox').onclick = () => ir(Math.min(sls.length - 1, atual() + 1));
-tr.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') ir(Math.min(sls.length - 1, atual() + 1)); if (e.key === 'ArrowLeft') ir(Math.max(0, atual() - 1)); });
+const marcar = () => [...$('#pontos').children].forEach((b, i) => b.setAttribute('aria-current', i === atual()));
+function pontos() { const n = tr.children.length; $('#pontos').innerHTML = Array.from({ length: n }, (_, i) => `<button type="button" aria-label="Lâmina ${i + 1}"></button>`).join(''); [...$('#pontos').children].forEach((b, i) => b.onclick = () => ir(i)); marcar(); }
+tr.addEventListener('scroll', () => requestAnimationFrame(marcar));
+$('#ant').onclick = () => ir(Math.max(0, atual() - 1));
+$('#prox').onclick = () => ir(Math.min(tr.children.length - 1, atual() + 1));
+tr.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') $('#prox').click(); if (e.key === 'ArrowLeft') $('#ant').click(); });
 
-// zoom de imagem
-const lb = document.getElementById('lb');
-document.querySelectorAll('[data-zoom]').forEach((im) => im.addEventListener('click', () => { lb.innerHTML = ''; const i = new Image(); i.src = im.src; i.alt = im.alt; lb.appendChild(i); lb.hidden = false; }));
+const lb = $('#lb');
+document.addEventListener('click', (e) => { const im = e.target.closest('[data-zoom]'); if (!im) return; lb.innerHTML = ''; const i = new Image(); i.src = im.src; i.alt = im.alt; lb.appendChild(i); lb.hidden = false; });
 lb.onclick = () => { lb.hidden = true; };
 addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.hidden = true; });
 
-// opinião: guardada só neste aparelho, copiada para o WhatsApp
-const PARTES = ['Conceito "Florescer a voz"', 'Cores', 'Fontes', 'Elementos e texturas', 'Jeito do feed', 'Direção das fotos'];
+// opinião: rascunho no aparelho e envio registrado na planilha do Google (cada envio vira uma linha com data e hora)
+const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLScBCIhE0jLHzIDQ2lzEDwyBiDPvdMFWY9yW7kPG_YUmOTWX-w/formResponse';
+const E = { data: 'entry.408970602', conceito: 'entry.42259709', cores: 'entry.1033496333', fontes: 'entry.442243872', elementos: 'entry.77742720', layouts: 'entry.525093356', fotos: 'entry.1465548829', par: 'entry.1408309223', combo: 'entry.1937997596', obs: 'entry.1008078632' };
+const PARTES = [['conceito', 'Conceito "Florescer a voz"'], ['cores', 'Cores'], ['fontes', 'Fontes'], ['layouts', 'Layouts e feed'], ['elementos', 'Elementos e texturas'], ['fotos', 'Direção das fotos']];
 const REA = ['Amei', 'Quase', 'Mudaria'];
-let estado = {}; try { estado = JSON.parse(localStorage.getItem('opiniao-ana') || '{}'); } catch {}
-const salvar = () => { try { localStorage.setItem('opiniao-ana', JSON.stringify(estado)); } catch {} };
-document.getElementById('oplista').innerHTML = PARTES.map((p, i) => `<div class="op-item"><b>${p}</b><div class="reacoes" role="group" aria-label="${p}">${REA.map((r) => `<button type="button" data-p="${i}" data-r="${r}">${r}</button>`).join('')}</div></div>`).join('');
-const marcarOp = () => document.querySelectorAll('.reacoes button').forEach((b) => b.setAttribute('aria-pressed', estado['p' + b.dataset.p] === b.dataset.r));
-document.querySelectorAll('.reacoes button').forEach((b) => b.onclick = () => { estado['p' + b.dataset.p] = b.dataset.r; salvar(); marcarOp(); });
-const obs = document.getElementById('obs'); obs.value = estado.obs || ''; obs.oninput = () => { estado.obs = obs.value; salvar(); };
-marcarOp();
-document.getElementById('copiar').onclick = async () => {
-  const linhas = ['Moodboard Teacher Ana: minha resposta', ...PARTES.map((p, i) => `${p}: ${estado['p' + i] || 'sem marcar'}`)];
-  if (fundo || dest) linhas.push(`Combinação favorita que testei: fundo ${fundo}, destaque ${dest}`);
-  if ((estado.obs || '').trim()) linhas.push('', 'Comentários: ' + estado.obs.trim());
-  toast((await copiar(linhas.join('\n'))) ? 'Copiado! Agora cole no WhatsApp' : 'Não consegui copiar, selecione o texto manualmente');
+let st = {}; try { st = JSON.parse(localStorage.getItem('opiniao-ana-v2') || '{}'); } catch {}
+if (st.par) par = st.par; if (st.fundo) fundo = st.fundo; if (st.dest) dest = st.dest;
+document.body.dataset.par = par;
+const gravar = () => { try { localStorage.setItem('opiniao-ana-v2', JSON.stringify(st)); } catch {} };
+function salvar() { st.par = par; st.fundo = fundo; st.dest = dest; st.alterado = true; gravar(); }
+$('#oplista').innerHTML = PARTES.map(([k, nome]) => `<div class="op-item"><b>${nome}</b><div class="reacoes" role="group" aria-label="${nome}">${REA.map((r) => `<button type="button" data-k="${k}" data-r="${r}">${r}</button>`).join('')}</div></div>`).join('');
+const marcarOp = () => document.querySelectorAll('.reacoes button').forEach((b) => b.setAttribute('aria-pressed', st[b.dataset.k] === b.dataset.r));
+document.querySelectorAll('.reacoes button').forEach((b) => b.onclick = () => { st[b.dataset.k] = b.dataset.r; salvar(); marcarOp(); });
+const obs = $('#obs'); obs.value = st.obs || ''; obs.oninput = () => { st.obs = obs.value; salvar(); };
+const nomePar = () => { const p = PARES.find((x) => x[0] === par); return `${p[1]} (${p[2]} + ${p[3]} + ${p[4]})`; };
+function resumo() { const r = $('#resumo'); if (r) r.innerHTML = `Vai junto com a sua resposta: fontes <b>${esc(nomePar())}</b> e cores <b>fundo ${esc(fundo)}, destaque ${esc(dest)}</b>.`; }
+function dados(rascunho) {
+  const d = new URLSearchParams();
+  d.append(E.data, new Date().toLocaleString('pt-BR') + (rascunho ? ' · rascunho automático (saiu sem tocar em Enviar)' : ''));
+  PARTES.forEach(([k]) => d.append(E[k], st[k] || 'sem marcar'));
+  d.append(E.par, nomePar()); d.append(E.combo, `fundo ${fundo}, destaque ${dest}`); d.append(E.obs, (st.obs || '').trim() || '(sem comentário)');
+  return d;
+}
+function texto() { return ['Moodboard Teacher Ana: minha resposta', ...PARTES.map(([k, n]) => `${n}: ${st[k] || 'sem marcar'}`), `Fontes escolhidas: ${nomePar()}`, `Cores: fundo ${fundo}, destaque ${dest}`, (st.obs || '').trim() ? 'Comentários: ' + st.obs.trim() : ''].filter(Boolean).join('\n'); }
+function historico() { const h = st.envios || []; $('#historico').innerHTML = h.length ? `<li>Enviado ${h.length === 1 ? 'uma vez' : h.length + ' vezes'}. Último envio: ${esc(h[h.length - 1])}</li>` : ''; }
+$('#enviar').onclick = async () => {
+  const b = $('#enviar'); b.disabled = true; b.textContent = 'Enviando...';
+  try {
+    await fetch(FORM, { method: 'POST', mode: 'no-cors', body: dados(false) });
+    st.envios = [...(st.envios || []), new Date().toLocaleString('pt-BR')]; st.alterado = false; gravar();
+    historico(); toast('Resposta enviada! Obrigada.');
+  } catch { toast('Não consegui enviar. Toque em "Copiar texto" e mande pelo WhatsApp.'); }
+  b.disabled = false; b.textContent = 'Enviar minha resposta';
 };
+$('#copiar').onclick = async () => toast((await copiar(texto())) ? 'Copiado! Agora cole no WhatsApp' : 'Não consegui copiar');
+// se ela marcar algo e sair sem enviar, o rascunho também vai para o registro
+addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'hidden' || !st.alterado) return;
+  const tem = PARTES.some(([k]) => st[k]) || (st.obs || '').trim(); if (!tem) return;
+  try { navigator.sendBeacon(FORM, dados(true)); st.alterado = false; gravar(); } catch {}
+});
+marcarOp(); historico();
+desenharPares(); desenharTudo(); pontos();
+addEventListener('resize', marcar);
 </script>
 </body></html>
