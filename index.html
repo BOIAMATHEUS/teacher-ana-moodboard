@@ -453,11 +453,11 @@ textarea{min-height:120px;resize:vertical;line-height:1.5}
     <div class="bastao" aria-hidden="true"></div>
     <div class="folha">
       <div class="cab"><h2 id="t7">A sua resposta</h2><span class="ref" aria-label="Prancha VII">VII<small>laringe</small></span></div>
-      <p class="corpo">Confira suas reações, escreva o que quiser e toque em <b>Enviar</b>. A resposta chega direto pra gente, com tudo o que você escolheu no manual. Pode enviar mais de uma vez: cada envio fica registrado. O que você marca no caminho também vai sendo salvo sozinho, então nada se perde se a página fechar; o Enviar é pra dizer que terminou.</p>
+      <p class="corpo">Confira suas reações, escreva o que quiser e toque em <b>Enviar</b>. A resposta chega direto pra gente, com tudo o que você escolheu no manual. Pode enviar mais de uma vez: cada envio fica registrado. O que você marca no caminho também vai sendo salvo sozinho, então nada se perde se a página fechar; o Enviar é pra dizer que terminou. Ao enviar, baixa também um PDF com todas as suas escolhas.</p>
       <ul class="resumo" id="resumo"></ul>
       <p class="escolhas" id="escolhas"></p>
       <div class="campo"><label for="obs">Comentários (o que amou, o que mudaria)</label><textarea id="obs" placeholder="Ex.: amei as cores, queria o verde-limão um pouco mais presente..."></textarea></div>
-      <div class="enviar"><button class="btn" type="button" id="enviar"><svg class="ic"><use href="#i-envia"/></svg> Enviar minha resposta</button><button class="btn2" type="button" id="copiar"><svg class="ic"><use href="#i-copia"/></svg> Copiar texto</button></div>
+      <div class="enviar"><button class="btn" type="button" id="enviar"><svg class="ic"><use href="#i-envia"/></svg> Enviar minha resposta</button><button class="btn2" type="button" id="pdf"><svg class="ic"><use href="#i-desce"/></svg> Baixar PDF</button><button class="btn2" type="button" id="copiar"><svg class="ic"><use href="#i-copia"/></svg> Copiar texto</button></div>
       <p class="historico" id="historico" aria-live="polite"></p>
     </div>
   </section>
@@ -640,11 +640,51 @@ function historico() { const h = st.envios || []; $('#historico').textContent = 
 $('#enviar').onclick = async () => {
   const b = $('#enviar'); b.disabled = true; const t0 = b.innerHTML; b.textContent = 'Enviando...';
   clearTimeout(espera);
-  try { await fetch(FORM, { method: 'POST', mode: 'no-cors', body: dados('enviou') }); st.envios = [...(st.envios || []), new Date().toLocaleString('pt-BR')]; st.ultimo = assinatura(); st.alterado = false; gravar(); historico(); toast('Resposta enviada. Obrigada!'); }
+  try { await fetch(FORM, { method: 'POST', mode: 'no-cors', body: dados('enviou') }); st.envios = [...(st.envios || []), new Date().toLocaleString('pt-BR')]; st.ultimo = assinatura(); st.alterado = false; gravar(); historico(); toast('Resposta enviada. Obrigada! O PDF está baixando.'); baixarPDF().catch(() => {}); }
   catch { toast('Não consegui enviar. Toque em "Copiar texto" e mande pelo WhatsApp.'); }
   b.disabled = false; b.innerHTML = t0;
 };
 $('#copiar').onclick = async () => toast((await copiar(texto())) ? 'Copiado. Agora cole no WhatsApp' : 'Não consegui copiar');
+// ---------- PDF com as respostas (jsPDF só carrega quando ela pede) ----------
+let jspdf;
+const carregarPDF = () => jspdf || (jspdf = new Promise((ok, erro) => { const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'; s.onload = () => ok(window.jspdf.jsPDF); s.onerror = () => { jspdf = null; erro(new Error('jsPDF')); }; document.head.appendChild(s); }));
+async function baixarPDF() {
+  const PDF = await carregarPDF(); const doc = new PDF({ unit: 'mm', format: 'a4' });
+  const W = 210, AL = 297, M = 18, LG = W - 2 * M; let y = 0;
+  const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const tinta = (h) => doc.setTextColor(...rgb(h)), fill = (h) => doc.setFillColor(...rgb(h)), traco = (h) => doc.setDrawColor(...rgb(h));
+  const fonte = (f, e, t) => { doc.setFont(f, e); doc.setFontSize(t); };
+  const pagina = () => { fill(V.papel); doc.rect(0, 0, W, AL, 'F'); fill(V.musgo); doc.rect(0, 0, W, 7, 'F'); fonte('helvetica', 'normal', 8); tinta(V.musgo); doc.text(`${H} · Florescer a voz · resposta registrada pela Rama`, M, AL - 10); doc.text(`sessão ${st.sid}`, W - M, AL - 10, { align: 'right' }); };
+  const cabe = (h) => { if (y + h > AL - 22) { doc.addPage(); pagina(); y = 22; } };
+  const secao = (t) => { cabe(16); fonte('helvetica', 'bold', 8.5); doc.setCharSpace(0.7); tinta(V.terraEsc); doc.text(t.toUpperCase(), M, y); doc.setCharSpace(0); traco(V.musgo); doc.setLineWidth(0.3); doc.line(M, y + 2.2, W - M, y + 2.2); y += 10; };
+  const corrido = (t, f = ['helvetica', 'normal', 11], cor = V.musgo, alt = 5.4) => { fonte(...f); tinta(cor); doc.splitTextToSize(t, LG).forEach((l) => { cabe(alt); doc.text(l, M, y); y += alt; }); };
+  pagina();
+  // cabeçalho: título com a marcação verde-limão em "a voz"
+  y = 30; fonte('times', 'bold', 34); const t1 = 'Florescer ', w1 = doc.getTextWidth(t1), w2 = doc.getTextWidth('a voz');
+  fill(V.limao); doc.rect(M + w1 - 1, y - 8.5, w2 + 2.5, 10, 'F'); tinta(V.musgo); doc.text(t1 + 'a voz', M, y);
+  y += 9; fonte('helvetica', 'normal', 11.5); doc.text('Manual da Teacher Ana · as respostas da Ana', M, y);
+  const env = st.envios || []; y += 6; fonte('helvetica', 'normal', 9); tinta(V.cafe);
+  doc.text(`PDF gerado em ${new Date().toLocaleString('pt-BR')} · ${env.length ? `enviado ${env.length === 1 ? '1 vez' : env.length + ' vezes'}, último em ${env[env.length - 1]}` : 'ainda não enviado pelo botão'}`, M, y);
+  y += 14;
+  secao('Reações, prancha por prancha');
+  const COR_R = { Amei: [V.musgo, V.papel], Quase: [V.areia, V.cafe], Mudaria: [V.terraEsc, V.papel] };
+  PARTES.forEach(([k, n]) => { cabe(9); fonte('helvetica', 'normal', 11.5); tinta(V.tinta); doc.text(n, M, y); const r = st[k];
+    if (r) { const [bg, fg] = COR_R[r]; fill(bg); doc.roundedRect(W - M - 30, y - 4.6, 30, 6.6, 3.3, 3.3, 'F'); fonte('helvetica', 'bold', 9.5); tinta(fg); doc.text(r, W - M - 15, y, { align: 'center' }); }
+    else { traco(V.cafe); doc.setLineWidth(0.25); doc.roundedRect(W - M - 30, y - 4.6, 30, 6.6, 3.3, 3.3, 'S'); fonte('helvetica', 'normal', 9); tinta(V.cafe); doc.text('sem marcar', W - M - 15, y, { align: 'center' }); }
+    traco(V.areia); doc.setLineWidth(0.2); doc.line(M, y + 3.4, W - M, y + 3.4); y += 9.6; });
+  y += 4; secao('Fontes escolhidas');
+  const p = PARES.find((x) => x[0] === par); const [ft, fm, fx] = p[2].split(' + ');
+  cabe(8); fonte('times', 'bold', 18); tinta(V.musgo); doc.text(`Tiragem ${p[1]}`, M, y); y += 7;
+  corrido(`Título: ${ft}   ·   Destaque: ${fm}   ·   Texto: ${fx}`, ['helvetica', 'normal', 10.5], V.tinta);
+  if ((st.frase || '').trim()) { y += 1.5; corrido(`Frase testada: "${st.frase.trim()}"`, ['times', 'italic', 12.5], V.cafe, 6); }
+  y += 5; secao('Cores escolhidas');
+  cabe(30); fonte('times', 'bold', 18); tinta(V.musgo); doc.text(`Acorde ${NOMES[fundo + '|' + dest] || ''}`, M, y); y += 5;
+  [[fundo, FUN[fundo][0], 'fundo'], [dest, DES[dest], 'destaque']].forEach(([n, h, papel], i) => { const x = M + i * 64; fill(h); traco(V.musgo); doc.setLineWidth(0.3); doc.rect(x, y, 22, 16, 'FD'); fonte('helvetica', 'bold', 10.5); tinta(V.tinta); doc.text(n, x + 26, y + 6); fonte('helvetica', 'normal', 9); tinta(V.cafe); doc.text(`${papel} · ${h.toUpperCase()}`, x + 26, y + 11.5); });
+  y += 26; secao('Comentários');
+  corrido((st.obs || '').trim() || '(sem comentário)', ['helvetica', 'normal', 11.5], V.tinta, 5.8);
+  doc.save(`teacher-ana-respostas-${new Date().toISOString().slice(0, 10)}.pdf`);
+}
+$('#pdf').onclick = async () => { const b = $('#pdf'); b.disabled = true; try { await baixarPDF(); toast('PDF baixado'); } catch { toast('Não consegui gerar o PDF. Toque em "Copiar texto".'); } b.disabled = false; };
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') registrar('saiu'); });
 addEventListener('pagehide', () => registrar('saiu'));
 // marca a abertura uma vez por sessão do navegador, depois de 20 s na página
