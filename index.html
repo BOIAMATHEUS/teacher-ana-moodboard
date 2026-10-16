@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Teacher Ana · moodboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&family=Caveat:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* Página de aprovação do moodboard. Paleta: a que a própria Ana mandou. Layout: coluna editorial que vira grade no desktop. */
+:root{--musgo:#3F4A2B;--cafe:#4A3426;--tinta:#1C1A17;--papel:#F4EDDD;--areia:#E3D4B4;--terracota:#C4623A;--terracota-escura:#A24B28;--limao:#C9DB5E;--jeans:#4F6D8F;--branco:#FFFCF5;--suave:#5A5145;
+--titulo:"Fraunces",Georgia,serif;--mao:"Caveat","Segoe Print",cursive;--texto:"DM Sans",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--tinta);font:400 17px/1.55 var(--texto);padding:0 20px 80px}
+.f{font-family:var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1}
+.mao{font-family:var(--mao);font-weight:700}
+.wrap{max-width:1120px;margin:0 auto}
+.rot{font:700 13px var(--texto);letter-spacing:.18em;text-transform:uppercase;color:var(--musgo)}
+h2{font:600 clamp(34px,5vw,52px)/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;color:var(--musgo);margin:10px 0 14px;text-wrap:balance}
+h2 .mao{color:var(--terracota-escura);font-size:1.08em}
+.lead{max-width:62ch;color:#3a352d}
+section{padding-block:72px;border-top:1.5px solid rgba(63,74,43,.14)}
+.grao{position:fixed;inset:0;pointer-events:none;opacity:.2;mix-blend-mode:multiply;z-index:50;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .18  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(244,237,221,.92);backdrop-filter:blur(8px);margin:0 -20px;padding:12px 20px;border-bottom:1px solid rgba(63,74,43,.12)}
+nav{overflow:hidden}
+nav .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;min-width:0;width:100%}
+.hero>*,.combo>*,.feedbox>*,.fotos>*,.tipos>*,.tres>*,.gal>*{min-width:0}
+.celular{width:100%}
+nav a{flex:none;text-decoration:none;color:var(--musgo);font:500 15px var(--texto);padding:7px 14px;border-radius:99px;border:1.5px solid rgba(63,74,43,.3)}
+nav a:hover,nav a:focus-visible{background:var(--musgo);color:var(--papel);outline:none}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:56px 64px;border:0}
+.hero h1{padding-bottom:.12em;font:600 clamp(70px,11vw,148px)/.86 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;color:var(--musgo);letter-spacing:-.02em;margin:16px 0 8px}
+.hero h1 .mao{display:block;color:var(--terracota-escura);font-size:.72em;transform:rotate(-4deg);margin:0 0 0 .9em;letter-spacing:0;clip-path:inset(0 100% 0 0);animation:escrever 1.6s .4s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes escrever{to{clip-path:inset(0 -10% 0 0)}}
+.hero p{font-size:20px;max-width:34em;color:#3a352d}
+.palavras{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.palavras span{border:1.5px solid var(--musgo);border-radius:99px;padding:6px 15px;font:500 16px var(--texto);color:var(--musgo)}
+.arte{border-radius:18px;overflow:hidden;box-shadow:0 22px 50px rgba(50,40,20,.16);background:var(--areia)}
+.arte img{display:block;width:100%;height:auto}
+.legenda{font:600 22px/1.1 var(--mao);color:var(--cafe);margin-top:10px}
+/* ouvimos */
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.card{background:var(--branco);border-radius:16px;padding:22px 22px 24px}
+.card b{display:block;font:700 13px var(--texto);letter-spacing:.14em;text-transform:uppercase;color:var(--terracota-escura);margin-bottom:8px}
+.card p{font-size:16px}
+/* paleta */
+.barra{display:flex;height:58px;border-radius:12px;overflow:hidden;margin:24px 0 16px}
+.barra span{display:flex;align-items:flex-end;padding:0 0 7px 9px;font:700 12px var(--texto)}
+.cores{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cor{border:0;text-align:left;cursor:pointer;background:var(--branco);border-radius:14px;overflow:hidden;font:inherit;color:inherit;transition:transform .15s}
+.cor:hover{transform:translateY(-3px)}
+.cor:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
+.cor i{display:block;height:84px}
+.cor span{display:block;padding:10px 13px 12px;font-size:14px;line-height:1.35}
+.cor strong{display:block;font-size:16px}
+.combo{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:40px;align-items:center}
+.escolha{display:flex;flex-direction:column;gap:18px}
+.escolha .op{display:flex;gap:10px;flex-wrap:wrap}
+.escolha button{width:46px;height:46px;border-radius:50%;border:3px solid transparent;cursor:pointer;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.12)}
+.escolha button[aria-pressed=true]{border-color:var(--tinta)}
+.escolha button:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
+.prev{aspect-ratio:4/5;border-radius:12px;padding:28px;display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(50,40,20,.18);transition:background .35s,color .35s}
+.prev .k{font:700 11px var(--texto);letter-spacing:.18em;text-transform:uppercase}
+.prev h3{font:600 36px/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;margin-top:14px}
+.prev h3 .mao{display:block;font-size:42px;margin-top:6px;transform:rotate(-3deg);transition:color .35s}
+.prev .pill{margin-top:auto;align-self:flex-end;font:700 13px var(--texto);border-radius:99px;padding:7px 14px;transition:background .35s,color .35s}
+.dica{font-size:15px;color:var(--suave)}
+/* tipografia */
+.campo{display:flex;flex-direction:column;gap:8px;margin:24px 0 18px;max-width:560px}
+.campo label{font:500 15px var(--texto);color:var(--suave)}
+.campo input{font:500 18px var(--texto);padding:14px 16px;border-radius:12px;border:1.5px solid rgba(63,74,43,.35);background:var(--branco);color:var(--tinta)}
+.campo input:focus-visible{outline:3px solid var(--terracota);outline-offset:1px}
+.tipos{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px}
+.tipo{background:var(--branco);border-radius:16px;padding:24px;min-height:200px;display:flex;flex-direction:column}
+.tipo .ex{color:var(--musgo);overflow-wrap:anywhere}
+.tipo small{margin-top:auto;padding-top:16px;font-size:14px;color:var(--suave)}
+#ex1{font:600 46px/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1}
+#ex2{font:700 46px/1 var(--mao);color:var(--terracota-escura)}
+#ex3{font:400 19px/1.5 var(--texto);color:var(--tinta)}
+/* elementos */
+.gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:26px}
+.gal figure{background:var(--branco);border-radius:16px;overflow:hidden}
+.gal img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;cursor:zoom-in}
+.gal figcaption{padding:12px 16px 14px;font-size:15px}
+/* feed */
+.feedbox{display:grid;grid-template-columns:420px 1fr;gap:36px;margin-top:26px;align-items:start}
+.celular{background:var(--branco);border-radius:28px;padding:18px 14px 20px;box-shadow:0 22px 50px rgba(50,40,20,.16)}
+.perfil{display:flex;align-items:center;gap:14px;padding:4px 6px 14px}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--musgo);display:grid;place-items:center;color:var(--limao);font:700 30px var(--mao);flex:none}
+.perfil b{display:block;font-size:16px}
+.perfil span{font-size:13px;color:var(--suave);line-height:1.35;display:block}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.g{aspect-ratio:4/5;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:9px;font-family:var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:600;font-size:13px;line-height:1.02}
+.g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.g span{position:relative}
+.g .mao{font-size:15px}
+.car{position:relative}
+.trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:0;border-radius:14px;scrollbar-width:none;box-shadow:0 18px 40px rgba(50,40,20,.18)}
+.trilho::-webkit-scrollbar{display:none}
+.sl{flex:0 0 100%;aspect-ratio:4/5;scroll-snap-align:start;padding:34px 30px;display:flex;flex-direction:column;position:relative}
+.sl .k{font:700 12px var(--texto);letter-spacing:.18em;text-transform:uppercase}
+.sl h3{font:600 clamp(30px,4vw,42px)/1 var(--titulo);font-variation-settings:"SOFT" 100,"WONK" 1;margin-top:14px}
+.sl h3 .mao{display:block;font-size:1.14em;transform:rotate(-3deg);margin-top:6px}
+.sl p{font-size:18px;margin-top:16px;max-width:30ch}
+.sl .num{margin-top:auto;font:700 13px var(--texto);opacity:.8}
+.pontos{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.pontos button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(63,74,43,.25);cursor:pointer;padding:0}
+.pontos button[aria-current=true]{background:var(--musgo);width:24px;border-radius:9px}
+.setas{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.setas button{font:500 15px var(--texto);background:var(--branco);border:1.5px solid rgba(63,74,43,.3);border-radius:99px;padding:7px 16px;cursor:pointer;color:var(--musgo)}
+/* fotos */
+.fotos{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;margin-top:26px;align-items:center}
+.fotos img{width:100%;border-radius:16px;display:block;cursor:zoom-in}
+.regras{display:grid;gap:12px}
+.regra{background:var(--branco);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.regra i{font:700 26px/1 var(--mao);color:var(--terracota-escura);font-style:normal}
+.fora{background:var(--branco);border:2px dashed var(--terracota-escura);border-radius:16px;padding:22px 24px;margin-top:22px}
+.fora ul{margin:8px 0 0 18px}
+/* opinião */
+.op-lista{display:grid;gap:12px;margin:24px 0 18px}
+.op-item{background:var(--branco);border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.op-item b{font-size:16px}
+.reacoes{display:flex;gap:6px}
+.reacoes button{font:500 14px var(--texto);border-radius:99px;padding:7px 13px;border:1.5px solid rgba(63,74,43,.3);background:transparent;cursor:pointer;color:var(--tinta)}
+.reacoes button[aria-pressed=true]{background:var(--musgo);color:var(--papel);border-color:var(--musgo)}
+textarea{width:100%;min-height:120px;font:400 17px/1.5 var(--texto);padding:14px 16px;border-radius:12px;border:1.5px solid rgba(63,74,43,.35);background:var(--branco);color:var(--tinta);resize:vertical}
+textarea:focus-visible,.reacoes button:focus-visible,.setas button:focus-visible,.pontos button:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
+.enviar{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font:700 17px var(--texto);background:var(--musgo);color:var(--papel);border:0;border-radius:99px;padding:15px 26px;cursor:pointer}
+.btn:focus-visible{outline:3px solid var(--terracota);outline-offset:2px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tinta);color:var(--papel);padding:11px 18px;border-radius:99px;font:500 15px var(--texto);z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+#toast.on{opacity:1}
+#lb{position:fixed;inset:0;background:rgba(20,18,14,.88);z-index:70;display:flex;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+[hidden]{display:none!important}
+footer{padding-top:30px;font-size:14px;color:var(--suave)}
+@media (max-width:860px){.hero,.combo,.feedbox,.fotos{grid-template-columns:1fr}.tres{grid-template-columns:1fr}.cores{grid-template-columns:repeat(2,1fr)}.tipos{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}.celular{max-width:420px}.combo .prev{max-width:340px}}
+@media (prefers-reduced-motion:reduce){.hero h1 .mao{animation:none;clip-path:none}html{scroll-behavior:auto}.cor{transition:none}}
+</style></head><body>
+<div class="grao" aria-hidden="true"></div>
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <div class="rot">Teacher Ana · moodboard da marca</div>
+    <h1>Florescer<span class="mao">a voz</span></h1>
+    <p>Uma marca que acolhe o erro e chama pra falar. Natural e terrosa como o seu mundo, com a leveza de quem conversa com todo mundo na festa. A ciência da fala, contada como se fosse magia.</p>
+    <div class="palavras"><span>acolhimento</span><span>coragem</span><span>curiosidade</span><span>natureza</span><span>leveza</span></div>
+  </div>
+  <figure>
+    <div class="arte"><img src="img/anatomia.jpg" alt="Ilustração científica de um perfil com os músculos da fala e folhas brotando da boca" data-zoom></div>
+    <figcaption class="legenda">os músculos da fala, florescendo</figcaption>
+  </figure>
+</header>
+</div>
+
+<nav aria-label="Seções"><div class="wrap">
+  <a href="#ouvimos">O que ouvimos</a><a href="#paleta">Cores</a><a href="#tipografia">Fontes</a><a href="#elementos">Elementos</a><a href="#feed">Feed</a><a href="#fotos">Fotos</a><a href="#opiniao">Sua opinião</a>
+</div></nav>
+
+<main class="wrap">
+<section id="ouvimos">
+  <div class="rot">01 · O que ouvimos de você</div>
+  <h2 class="f">A marca nasce <span class="mao">da sua história</span></h2>
+  <div class="tres">
+    <div class="card"><b>Você</b><p>Bióloga que reprovou em inglês na escola e destravou aos 22. Ensina com autenticidade, aceitação e empatia: parceira de jornada, nunca juíza de caneta vermelha.</p></div>
+    <div class="card"><b>Sua aluna</b><p>Profissional cansada que entende tudo, mas trava na hora de falar. "Dá branco", "congelo na pergunta". Quer reuniões, entrevistas e congressos em inglês, com tranquilidade.</p></div>
+    <div class="card"><b>A marca</b><p>Leve, moderna e acolhedora, com um pouco de detalhe. Mistura português e inglês. Nunca arrogante, coach, genérica ou crítica.</p></div>
+  </div>
+</section>
+
+<section id="paleta">
+  <div class="rot">02 · Cores</div>
+  <h2 class="f">A paleta é a sua, <span class="mao">só organizada</span></h2>
+  <p class="lead">Mantive as cores que você mandou e defini quanto cada uma aparece no feed. O verde-limão entra pequeno, como um respiro. Toque numa cor para copiar o código.</p>
+  <div class="barra" aria-hidden="true">
+    <span style="flex:34;background:var(--papel);color:var(--musgo);box-shadow:inset 0 0 0 1.5px var(--areia)">34%</span><span style="flex:24;background:var(--musgo);color:var(--papel)">24%</span><span style="flex:13;background:var(--areia);color:var(--cafe)">13%</span><span style="flex:9;background:var(--terracota);color:var(--tinta)">9%</span><span style="flex:8;background:var(--cafe);color:var(--papel)">8%</span><span style="flex:5;background:var(--limao);color:var(--musgo)">5%</span><span style="flex:4;background:var(--jeans);color:var(--papel)">4%</span><span style="flex:3;background:var(--tinta);color:var(--papel)">3%</span>
+  </div>
+  <div class="cores" id="cores"></div>
+
+  <div class="combo">
+    <div class="escolha">
+      <div class="rot">Teste uma combinação</div>
+      <div><p class="dica">Fundo do post</p><div class="op" id="fundos" role="group" aria-label="Fundo"></div></div>
+      <div><p class="dica">Cor de destaque</p><div class="op" id="destaques" role="group" aria-label="Destaque"></div></div>
+      <p class="dica">Toda combinação daqui funciona dentro da marca. Se tiver uma favorita, conta pra gente lá no fim.</p>
+    </div>
+    <div class="prev" id="prev"><div class="k">Pronúncia · semana 1</div><h3>Os músculos que fazem você falar inglês<span class="mao">e como acordar eles</span></h3><span class="pill">arrasta →</span></div>
+  </div>
+</section>
+
+<section id="tipografia">
+  <div class="rot">03 · Fontes</div>
+  <h2 class="f">Uma serifa macia, <span class="mao">uma letra à mão</span></h2>
+  <p class="lead">A serifa dá autoridade sem ficar fria. A letra à mão é o seu jeito de falar, e entra só numa palavra por vez. Escreva uma frase sua e veja nas três fontes.</p>
+  <div class="campo"><label for="frase">Sua frase</label><input id="frase" type="text" maxlength="60" value="Pode tentar, eu tô aqui"></div>
+  <div class="tipos">
+    <div class="tipo"><div class="ex" id="ex1"></div><small>Fraunces · títulos</small></div>
+    <div class="tipo"><div class="ex" id="ex2"></div><small>Caveat · destaque à mão</small></div>
+    <div class="tipo"><div class="ex" id="ex3"></div><small>DM Sans · texto dos carrosséis e legendas</small></div>
+  </div>
+</section>
+
+<section id="elementos">
+  <div class="rot">04 · Elementos e texturas</div>
+  <h2 class="f">Desenhos que <span class="mao">brotam</span></h2>
+  <p class="lead">Nada de bandeira nem ícone de escola. Os elementos vêm da sua história: a voz que vira planta, o cérebro florescendo, papel de verdade com textura.</p>
+  <div class="gal">
+    <figure><img src="img/elementos.jpg" alt="Folha de elementos desenhados à mão" data-zoom><figcaption>Elementos para os posts: som virando ramo, cérebro florescendo, sublinhados</figcaption></figure>
+    <figure><img src="img/colagem.jpg" alt="Colagem de papéis rasgados nas cores da marca" data-zoom><figcaption>Fundo de colagem de papel, com espaço para o texto</figcaption></figure>
+    <figure><img src="img/textura.jpg" alt="Textura de papel verde musgo com sombra de folhas" data-zoom><figcaption>Textura verde musgo para capas</figcaption></figure>
+  </div>
+</section>
+
+<section id="feed">
+  <div class="rot">05 · Como fica no seu Instagram</div>
+  <h2 class="f">O feed <span class="mao">ganha vida</span></h2>
+  <p class="lead">Uma prévia de como os templates conversam entre si. Ao lado, um carrossel de exemplo para deslizar, no tema que você quer começar: os músculos da fala.</p>
+  <div class="feedbox">
+    <div class="celular">
+      <div class="perfil"><div class="avatar" aria-hidden="true">A</div><div><b>@anaroque.teacher</b><span>Teacher Ana · inglês pra quem entende tudo, mas trava na hora de falar</span></div></div>
+      <div class="grade" aria-label="Prévia do feed">
+        <div class="g" style="background:var(--musgo);color:var(--papel)"><span>Os músculos da fala <span class="mao" style="color:var(--limao)">semana 1</span></span></div>
+        <div class="g" style="color:var(--papel)"><img src="img/pratica.jpg" alt=""><span style="text-shadow:0 1px 6px rgba(0,0,0,.5)">Treine no espelho</span></div>
+        <div class="g" style="background:var(--papel);color:var(--cafe)"><span>"Pode tentar. <span class="mao" style="color:var(--terracota-escura)">Eu tô aqui.</span>"</span></div>
+        <div class="g"><img src="img/colagem.jpg" alt=""><span style="color:var(--musgo)">Entendia tudo, <span class="mao" style="color:var(--terracota-escura)">não saía</span></span></div>
+        <div class="g" style="background:var(--terracota);color:var(--tinta)"><span>Por que dá branco?</span></div>
+        <div class="g" style="background:var(--areia);color:var(--musgo)"><span>TH sem medo <span class="mao" style="color:var(--terracota-escura)">2 min por dia</span></span></div>
+        <div class="g" style="background:var(--papel)"><img src="img/anatomia.jpg" alt=""></div>
+        <div class="g" style="background:var(--jeans);color:var(--papel)"><span>Reunião em inglês: 3 frases</span></div>
+        <div class="g" style="background:var(--cafe);color:var(--papel)"><span>Histórias de <span class="mao" style="color:var(--limao)">alunas</span></span></div>
+      </div>
+    </div>
+    <div class="car">
+      <div class="trilho" id="trilho" tabindex="0" aria-label="Carrossel de exemplo, deslize para os lados">
+        <div class="sl" style="background:var(--musgo) url(img/textura.jpg) center/cover;color:var(--papel)"><div class="k" style="color:var(--limao)">Pronúncia · semana 1</div><h3>Os músculos que fazem você falar inglês<span class="mao" style="color:var(--limao)">e como acordar eles</span></h3><span class="num">1/4 · arrasta →</span></div>
+        <div class="sl" style="background:var(--papel);color:var(--musgo)"><div class="k" style="color:var(--terracota-escura)">Por que trava</div><h3>Sua boca aprendeu <span class="mao" style="color:var(--terracota-escura)">português primeiro</span></h3><p style="color:var(--tinta)">Cada língua usa os músculos do rosto de um jeito. Por isso o "th" parece impossível no começo. Não é falta de talento: é treino de músculo.</p><span class="num">2/4</span></div>
+        <div class="sl" style="background:var(--areia);color:var(--cafe)"><div class="k">Prática da semana</div><h3>O som do <span class="mao" style="color:var(--terracota-escura)">TH</span></h3><p style="color:var(--tinta)">Ponha a ponta da língua entre os dentes e sopre devagar. Agora diga "think". Sem pressa, na frente do espelho.</p><span class="num">3/4</span></div>
+        <div class="sl" style="background:var(--terracota);color:var(--tinta)"><div class="k">Pra levar</div><h3>Pode tentar. <span class="mao" style="color:var(--papel)">Eu tô aqui.</span></h3><p>Salve esse post e pratique 2 minutos por dia. Me conta nos comentários qual som mais te trava.</p><span class="num">4/4</span></div>
+      </div>
+      <div class="pontos" id="pontos"></div>
+      <div class="setas"><button type="button" id="ant">← anterior</button><button type="button" id="prox">próximo →</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="fotos">
+  <div class="rot">06 · Suas fotos</div>
+  <h2 class="f">A rotina real, <span class="mao">em luz quente</span></h2>
+  <div class="fotos">
+    <img src="img/pratica.jpg" alt="Mãos segurando um espelho ao lado de um caderno de pronúncia" data-zoom>
+    <div class="regras">
+      <div class="regra"><i>1</i><p><b>Luz de janela</b>, de manhã ou fim de tarde. Nada de flash nem luz branca de escritório.</p></div>
+      <div class="regra"><i>2</i><p><b>Três cenários:</b> sua mesa de estudo, a sua casa (poltrona, livros, caneca) e a natureza, como as poses no parque que você separou.</p></div>
+      <div class="regra"><i>3</i><p><b>Não só o seu rosto:</b> mãos, caderno, espelho, paisagem. Isso conversa com o seu conteúdo e deixa o feed respirando.</p></div>
+      <div class="regra"><i>4</i><p><b>Roupas nas cores da marca:</b> verdes, terrosos, bege e jeans aparecem sozinhos nas fotos.</p></div>
+    </div>
+  </div>
+  <div class="fora"><div class="rot" style="color:var(--terracota-escura)">Fica de fora</div>
+    <ul><li>Bandeiras e o azul-vermelho de EUA e Inglaterra</li><li>Cara corporativa de escola tradicional</li><li>Monograma e balão de fala sozinho (é a cara do Take it Easy)</li><li>Tom de coach e promessa de fluência rápida</li></ul></div>
+</section>
+
+<section id="opiniao">
+  <div class="rot">07 · Sua opinião</div>
+  <h2 class="f">O que você <span class="mao">achou?</span></h2>
+  <p class="lead">Marque cada parte e escreva o que quiser. No fim, toque em "Copiar minha resposta" e cole no WhatsApp. Sem o seu ok, a gente não segue para o logo.</p>
+  <div class="op-lista" id="oplista"></div>
+  <label for="obs" class="dica">Comentários livres (o que mudaria, o que amou)</label>
+  <textarea id="obs" placeholder="Ex.: amei as cores, queria o verde-limão um pouco mais presente..."></textarea>
+  <div class="enviar"><button class="btn" type="button" id="copiar">Copiar minha resposta</button><span class="dica">Depois é só colar na conversa do WhatsApp.</span></div>
+</section>
+<footer>Imagens ilustrativas de direção. As fotos finais serão as suas. Feito pela Rama.</footer>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="lb" hidden></div>
+
+<script>
+const C = [['Papel','#F4EDDD','fundo principal'],['Verde musgo','#3F4A2B','autoridade, títulos'],['Bege areia','#E3D4B4','cartões'],['Terracota','#C4623A','energia, destaque'],['Marrom café','#4A3426','acolhimento'],['Verde-limão','#C9DB5E','pop, só pequeno'],['Jeans','#4F6D8F','variação'],['Preto tinta','#1C1A17','texto']];
+const toast = (t) => { const e = document.getElementById('toast'); e.textContent = t; e.classList.add('on'); clearTimeout(e._t); e._t = setTimeout(() => e.classList.remove('on'), 1800); };
+const copiar = async (t) => { try { await navigator.clipboard.writeText(t); return true; } catch { const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); let ok = false; try { ok = document.execCommand('copy'); } catch {} a.remove(); return ok; } };
+document.getElementById('cores').innerHTML = C.map(([n, h, u]) => `<button class="cor" type="button" data-hex="${h}"><i style="background:${h};${h === '#F4EDDD' ? 'box-shadow:inset 0 0 0 1.5px #E3D4B4' : ''}"></i><span><strong>${n}</strong>${h} · ${u}</span></button>`).join('');
+document.querySelectorAll('.cor').forEach((b) => b.addEventListener('click', async () => { toast((await copiar(b.dataset.hex)) ? `${b.dataset.hex} copiado` : b.dataset.hex); }));
+
+// teste de combinação: cada fundo tem um texto legível fixo; o destaque só colore a palavra à mão e o botão
+const F = { Papel: ['#F4EDDD', '#3F4A2B'], 'Verde musgo': ['#3F4A2B', '#F4EDDD'], 'Bege areia': ['#E3D4B4', '#4A3426'], 'Marrom café': ['#4A3426', '#F4EDDD'] };
+const D = { 'Verde-limão': '#C9DB5E', Terracota: '#C4623A', Jeans: '#4F6D8F' };
+const ok = { Papel: ['Terracota', 'Jeans'], 'Verde musgo': ['Verde-limão', 'Terracota'], 'Bege areia': ['Terracota', 'Jeans'], 'Marrom café': ['Verde-limão', 'Terracota'] };
+let fundo = 'Verde musgo', dest = 'Verde-limão';
+const prev = document.getElementById('prev');
+function pintar() {
+  if (!ok[fundo].includes(dest)) dest = ok[fundo][0];
+  const [bg, fg] = F[fundo]; const d = D[dest];
+  const legivel = (bg === '#F4EDDD' || bg === '#E3D4B4') ? (dest === 'Terracota' ? '#A24B28' : d) : d;
+  prev.style.background = bg; prev.style.color = fg;
+  prev.querySelector('.mao').style.color = legivel;
+  const pill = prev.querySelector('.pill'); pill.style.background = d; pill.style.color = dest === 'Verde-limão' ? '#3F4A2B' : (dest === 'Terracota' ? '#1C1A17' : '#F4EDDD');
+  prev.querySelector('.k').style.color = legivel;
+  document.querySelectorAll('#fundos button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.n === fundo));
+  document.querySelectorAll('#destaques button').forEach((b) => { const pode = ok[fundo].includes(b.dataset.n); b.disabled = !pode; b.style.opacity = pode ? 1 : .25; b.setAttribute('aria-pressed', b.dataset.n === dest); });
+}
+document.getElementById('fundos').innerHTML = Object.entries(F).map(([n, [h]]) => `<button type="button" data-n="${n}" aria-label="${n}" title="${n}" style="background:${h}"></button>`).join('');
+document.getElementById('destaques').innerHTML = Object.entries(D).map(([n, h]) => `<button type="button" data-n="${n}" aria-label="${n}" title="${n}" style="background:${h}"></button>`).join('');
+document.querySelectorAll('#fundos button').forEach((b) => b.onclick = () => { fundo = b.dataset.n; pintar(); });
+document.querySelectorAll('#destaques button').forEach((b) => b.onclick = () => { dest = b.dataset.n; pintar(); });
+pintar();
+
+// fontes ao vivo
+const fr = document.getElementById('frase');
+const tip = () => { const v = fr.value.trim() || 'Pode tentar, eu tô aqui'; ['ex1', 'ex2', 'ex3'].forEach((id) => document.getElementById(id).textContent = v); };
+fr.addEventListener('input', tip); tip();
+
+// carrossel
+const tr = document.getElementById('trilho'), sls = [...tr.children], pts = document.getElementById('pontos');
+pts.innerHTML = sls.map((_, i) => `<button type="button" aria-label="Lâmina ${i + 1}"></button>`).join('');
+const ir = (i) => tr.scrollTo({ left: i * tr.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+const atual = () => Math.round(tr.scrollLeft / tr.clientWidth);
+const marcar = () => [...pts.children].forEach((b, i) => b.setAttribute('aria-current', i === atual()));
+tr.addEventListener('scroll', () => requestAnimationFrame(marcar)); marcar();
+[...pts.children].forEach((b, i) => b.onclick = () => ir(i));
+document.getElementById('ant').onclick = () => ir(Math.max(0, atual() - 1));
+document.getElementById('prox').onclick = () => ir(Math.min(sls.length - 1, atual() + 1));
+tr.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') ir(Math.min(sls.length - 1, atual() + 1)); if (e.key === 'ArrowLeft') ir(Math.max(0, atual() - 1)); });
+
+// zoom de imagem
+const lb = document.getElementById('lb');
+document.querySelectorAll('[data-zoom]').forEach((im) => im.addEventListener('click', () => { lb.innerHTML = ''; const i = new Image(); i.src = im.src; i.alt = im.alt; lb.appendChild(i); lb.hidden = false; }));
+lb.onclick = () => { lb.hidden = true; };
+addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.hidden = true; });
+
+// opinião: guardada só neste aparelho, copiada para o WhatsApp
+const PARTES = ['Conceito "Florescer a voz"', 'Cores', 'Fontes', 'Elementos e texturas', 'Jeito do feed', 'Direção das fotos'];
+const REA = ['Amei', 'Quase', 'Mudaria'];
+let estado = {}; try { estado = JSON.parse(localStorage.getItem('opiniao-ana') || '{}'); } catch {}
+const salvar = () => { try { localStorage.setItem('opiniao-ana', JSON.stringify(estado)); } catch {} };
+document.getElementById('oplista').innerHTML = PARTES.map((p, i) => `<div class="op-item"><b>${p}</b><div class="reacoes" role="group" aria-label="${p}">${REA.map((r) => `<button type="button" data-p="${i}" data-r="${r}">${r}</button>`).join('')}</div></div>`).join('');
+const marcarOp = () => document.querySelectorAll('.reacoes button').forEach((b) => b.setAttribute('aria-pressed', estado['p' + b.dataset.p] === b.dataset.r));
+document.querySelectorAll('.reacoes button').forEach((b) => b.onclick = () => { estado['p' + b.dataset.p] = b.dataset.r; salvar(); marcarOp(); });
+const obs = document.getElementById('obs'); obs.value = estado.obs || ''; obs.oninput = () => { estado.obs = obs.value; salvar(); };
+marcarOp();
+document.getElementById('copiar').onclick = async () => {
+  const linhas = ['Moodboard Teacher Ana: minha resposta', ...PARTES.map((p, i) => `${p}: ${estado['p' + i] || 'sem marcar'}`)];
+  if (fundo || dest) linhas.push(`Combinação favorita que testei: fundo ${fundo}, destaque ${dest}`);
+  if ((estado.obs || '').trim()) linhas.push('', 'Comentários: ' + estado.obs.trim());
+  toast((await copiar(linhas.join('\n'))) ? 'Copiado! Agora cole no WhatsApp' : 'Não consegui copiar, selecione o texto manualmente');
+};
+</script>
+</body></html>
