@@ -124,14 +124,24 @@ svg.ic{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width
 .campo label{font:700 12px var(--c-mapa);letter-spacing:.14em;text-transform:uppercase;color:#4A433A}
 .campo input,textarea{font:500 17px var(--c-mapa);padding:13px 14px;border:2px solid var(--tinta);border-radius:0;background:#FBF6EA;color:var(--tinta);width:100%}
 .tiragens{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -22px;padding:6px 22px 14px;scrollbar-width:thin}
-.tiragem{flex:0 0 84%;scroll-snap-align:center;display:grid;gap:12px;background:#FBF6EA;border:2px solid var(--tinta);padding:12px}
+.tiragem{flex:0 0 86%;scroll-snap-align:center;display:flex;flex-direction:column;gap:16px;background:#FBF6EA;border:2px solid var(--tinta);padding:18px 18px 16px;position:relative}
 .tiragem[aria-pressed=true]{border-color:var(--terra-esc);box-shadow:0 0 0 3px var(--terracota)}
-.amostra{display:grid;gap:6px}
-.amostra .a-t{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:28px;line-height:1.05;color:var(--musgo)}
-.amostra .a-m{font-family:var(--mao);font-weight:var(--mw);font-size:calc(30px * var(--ms));line-height:1;color:var(--terra-esc)}
-.amostra .a-x{font-family:var(--texto);font-size:16px;line-height:1.45;color:var(--tinta)}
-.amostra .a-f{font:600 12px var(--c-mapa);letter-spacing:.06em;color:#5A5145}
-.usar{justify-self:start;display:inline-flex;align-items:center;gap:8px;font:800 14px var(--c-mapa);letter-spacing:.1em;text-transform:uppercase;font-variation-settings:"wdth" 75;background:var(--musgo);color:var(--papel);border:0;padding:12px 16px;cursor:pointer}
+.t-cab{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1.5px solid var(--tinta);padding-bottom:8px}
+.t-cab b{font:900 26px/1 var(--c-mapa);font-variation-settings:"wdth" 62;text-transform:uppercase;color:var(--musgo)}
+.t-cab span{font:700 11px var(--c-mapa);letter-spacing:.16em;text-transform:uppercase;color:#5A5145}
+.t-frase{min-height:2.2em;font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:clamp(34px,9vw,44px);line-height:1;color:var(--musgo);overflow-wrap:anywhere}
+.t-frase em{display:block;font-style:normal;font-family:var(--mao);font-weight:var(--mw);font-size:calc(1.12em * var(--ms));color:var(--terra-esc);margin-top:4px;transform:rotate(-2deg);transform-origin:left}
+.t-aa{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px dashed rgba(28,26,23,.45);border-bottom:1px dashed rgba(28,26,23,.45)}
+.t-aa div{padding:10px 6px 9px;display:grid;gap:4px;align-content:start}
+.t-aa div+div{border-left:1px dashed rgba(28,26,23,.45)}
+.t-aa i{font-style:normal;font-size:44px;line-height:1;color:var(--musgo)}
+.t-aa .g1{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw)}
+.t-aa .g2{font-family:var(--mao);font-weight:var(--mw);color:var(--terra-esc);font-size:calc(48px * var(--ms))}
+.t-aa .g3{font-family:var(--texto);font-weight:500}
+.t-aa small{font:700 10.5px/1.25 var(--c-mapa);letter-spacing:.1em;text-transform:uppercase;color:#4A433A}
+.t-aa small span{display:block;font:500 12.5px/1.25 var(--c-mapa);letter-spacing:0;text-transform:none;color:var(--tinta)}
+.t-corpo{font-family:var(--texto);font-size:16px;line-height:1.5;color:var(--tinta)}
+.usar{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:800 14px var(--c-mapa);letter-spacing:.1em;text-transform:uppercase;font-variation-settings:"wdth" 75;background:var(--musgo);color:var(--papel);border:0;padding:12px 16px;cursor:pointer}
 .tiragem[aria-pressed=true] .usar{background:var(--terra-esc)}
 .dica-arrasta{font:italic 400 15px var(--c-leg);color:#4A433A;margin-top:4px}
 /* prancha IV e V: espécimes e feed */
@@ -182,46 +192,60 @@ textarea{min-height:120px;resize:vertical;line-height:1.5}
 .historico{margin-top:14px;font-size:15px;color:#3a352d}
 .rodape{max-width:760px;margin:40px auto 0;text-align:center;font-size:14px;color:var(--areia);letter-spacing:.04em}
 
-/* ===== posts: sistema de 5 layouts (1080x1350 = 100cqw) ===== */
-.post{container-type:inline-size;aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--bg,var(--papel));color:var(--fg,var(--musgo));width:100%}
-.post .in{position:absolute;inset:0;padding:7.4cqw;display:flex;flex-direction:column}
-.meta{display:flex;justify-content:space-between;gap:3cqw;font:700 2.3cqw/1 var(--texto);letter-spacing:.16em;text-transform:uppercase;padding-bottom:2.4cqw;border-bottom:.3cqw solid currentColor;position:relative;z-index:2}
-.rod{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font:600 2.5cqw var(--texto);position:relative;z-index:2}
-.rod .seta{display:inline-flex;align-items:center;gap:1cqw;background:var(--ac,var(--limao));color:var(--acfg,var(--musgo));border-radius:99px;padding:1.4cqw 3cqw}
-.rod svg{width:2.8cqw;height:2.8cqw;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.tt{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:9.4cqw;line-height:.98;letter-spacing:-.01em}
-.mm{font-family:var(--mao);font-weight:var(--mw);font-size:calc(9.6cqw * var(--ms));line-height:1;color:var(--ac,var(--terracota))}
-.tx{font-family:var(--texto);font-size:3.7cqw;line-height:1.42}
-.ilu{position:absolute;right:-8cqw;bottom:5cqw;width:62cqw;mix-blend-mode:multiply;z-index:1;-webkit-mask-image:radial-gradient(closest-side,#000 64%,transparent 100%);mask-image:radial-gradient(closest-side,#000 64%,transparent 100%)}
-.texfundo{position:absolute;inset:0;background:url(img/textura.jpg) center/cover}
-.L1 .tt{margin-top:9cqw;max-width:80%;position:relative;z-index:2}
-.L1 .mm{display:block;margin-top:2.6cqw;transform:rotate(-3deg);transform-origin:left}
-.L2 img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.L2 .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,26,23,.55) 0%,rgba(28,26,23,0) 28%,rgba(28,26,23,0) 46%,rgba(28,26,23,.85) 100%)}
-.L2 .titulo{margin-top:auto;position:relative;z-index:2;margin-bottom:5cqw}
-.L2 .tt{font-size:10.4cqw}
-.L2 .tt b{font-weight:inherit;border:.35cqw solid var(--ac,var(--limao));border-radius:2cqw;padding:0 1.6cqw}
-.L2 .adesivo{position:absolute;right:7cqw;top:17cqw;z-index:3;background:var(--terracota);color:var(--tinta);font-family:var(--mao);font-weight:var(--mw);font-size:calc(5.4cqw * var(--ms));padding:1.6cqw 3.6cqw;border-radius:99px;transform:rotate(7deg)}
-.L2 svg.traco{position:absolute;left:5cqw;top:30cqw;width:60cqw;z-index:2}
-.L2 .rod{margin-top:0}
-.bilhete{position:relative;z-index:2;margin:9cqw 2cqw 0;background:var(--papel);color:var(--cafe);padding:9cqw 7cqw 8cqw;transform:rotate(-1.6deg);border-radius:.6cqw;box-shadow:0 1.6cqw 3cqw rgba(0,0,0,.25)}
-.fita{position:absolute;z-index:3;width:24cqw;height:7cqw;background:rgba(227,212,180,.85);top:calc(9cqw + 7.4cqw + 2cqw);left:50%;transform:translateX(-50%) rotate(-4deg)}
-.bilhete .tt{font-size:7.6cqw;line-height:1.05}
-.bilhete .mm{display:block;margin-top:4cqw;font-size:calc(7.4cqw * var(--ms));transform:rotate(-3deg)}
-.L4 .num{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:30cqw;line-height:.8;color:var(--ac,var(--terracota));margin-top:7cqw}
-.L4 .tt{font-size:7.4cqw;margin-top:2cqw;max-width:90%}
-.L4 ul{list-style:none;margin-top:5cqw;display:grid;gap:3cqw}
-.L4 li{font-family:var(--texto);font-size:3.9cqw;line-height:1.3;display:grid;grid-template-columns:5.5cqw 1fr;align-items:baseline}
-.L4 li::before{content:"";width:2.6cqw;height:2.6cqw;border-radius:50%;background:var(--ac,var(--terracota))}
-.L5 .polaroid{position:absolute;z-index:2;left:8cqw;top:19cqw;width:46cqw;background:#FFFCF5;padding:2.2cqw 2.2cqw 8cqw;transform:rotate(-4deg);box-shadow:0 2cqw 4cqw rgba(50,40,20,.22)}
-.L5 .polaroid img{display:block;width:100%;aspect-ratio:1/1.12;object-fit:cover}
-.L5 .polaroid span{position:absolute;left:3cqw;bottom:1.6cqw;font-family:var(--mao);font-weight:var(--mw);font-size:calc(5cqw * var(--ms));color:var(--cafe)}
-.L5 .espec{position:absolute;z-index:1;right:2cqw;top:13cqw;width:52cqw;mix-blend-mode:multiply;transform:rotate(3deg);-webkit-mask-image:radial-gradient(closest-side,#000 64%,transparent 100%);mask-image:radial-gradient(closest-side,#000 64%,transparent 100%)}
-.L5 .fita{top:17cqw;left:31cqw;width:17cqw;height:5.2cqw;transform:rotate(-12deg)}
-.L5 .titulo{margin-top:auto;position:relative;z-index:2;margin-bottom:4cqw}
-.L5 .tt{font-size:8.6cqw}
-.L5 .tx{margin-top:2cqw;max-width:80%}
-.L5 .rod{margin-top:0}
+/* ===== posts: 5 layouts de foto cheia (1080x1350 = 100cqw) ===== */
+.post{container-type:inline-size;aspect-ratio:4/5;position:relative;overflow:hidden;isolation:isolate;background:var(--bg,var(--papel));color:var(--fg,var(--musgo));width:100%}
+.post>img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 50%);z-index:-2}
+.post .scrim{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.post .in{position:absolute;inset:0;padding:5.6cqw 6cqw;display:flex;flex-direction:column}
+.barra{display:flex;align-items:center;gap:2.2cqw;font:600 2.7cqw/1 var(--texto);white-space:nowrap;position:relative;z-index:2}
+.barra i{flex:none;width:.3cqw;height:3.4cqw;background:currentColor;opacity:.75}
+.barra .dir{margin-left:auto;display:inline-flex;align-items:center;gap:1.2cqw}
+.barra svg{width:3cqw;height:3cqw;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pe{margin-top:auto}
+.tt{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);line-height:.92;letter-spacing:-.015em}
+.mm{font-family:var(--mao);font-weight:var(--mw);font-size:calc(6cqw * var(--ms));line-height:1}
+.tx{font-family:var(--texto);font-size:3.6cqw;line-height:1.38}
+/* pílula solta sobre a foto */
+.pilula{position:absolute;z-index:3;left:calc(var(--x) * 1cqw);top:calc(var(--y) * 1.25cqw);transform:rotate(calc(var(--r,0) * 1deg));background:var(--ac);color:var(--acfg);font:700 3cqw/1 var(--texto);padding:1.5cqw 2.8cqw;border-radius:99px;white-space:nowrap;box-shadow:0 .7cqw 1.8cqw rgba(28,26,23,.3)}
+/* caixa de seleção do Figma: tracejado + 4 alças */
+.sel{position:relative;display:inline-block;border:.3cqw dashed var(--sel,currentColor);padding:1.6cqw 2.4cqw}
+.sel>b{position:absolute;width:2cqw;height:2cqw;background:var(--papel);border:.35cqw solid var(--sel,currentColor)}
+.sel>b:nth-of-type(1){left:-1.15cqw;top:-1.15cqw}.sel>b:nth-of-type(2){right:-1.15cqw;top:-1.15cqw}
+.sel>b:nth-of-type(3){left:-1.15cqw;bottom:-1.15cqw}.sel>b:nth-of-type(4){right:-1.15cqw;bottom:-1.15cqw}
+/* L1 manchete mista: frase pequena selecionada + palavra gigante */
+.L1 .scrim{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 92%,transparent) 0%,color-mix(in srgb,var(--bg) 70%,transparent) 34%,transparent 62%,transparent 80%,color-mix(in srgb,var(--bg) 75%,transparent) 100%)}
+.L1 .mx{margin-top:7cqw;display:flex;flex-direction:column;align-items:flex-start;gap:1.4cqw;position:relative;z-index:2}
+.L1 .pq{font:500 6.2cqw/1.05 var(--texto);margin-left:1.2cqw;--sel:var(--ac)}
+.L1 .gr{font-size:calc(var(--gs) * 1cqw);line-height:.86}
+/* L2 blocos marcados: cada linha no seu próprio bloco */
+.L2 .scrim{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 55%,transparent) 0%,transparent 26%,transparent 82%,color-mix(in srgb,var(--bg) 80%,transparent) 100%)}
+.L2 .blocos{margin-top:5cqw;display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:2}
+.L2 .blocos span{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:7.2cqw;line-height:1.12;background:var(--bg);color:var(--fg);padding:.9cqw 2.4cqw 1.2cqw}
+.L2 .blocos span+span{margin-top:-.2cqw}
+.L2 .blocos em{font-style:normal;font-family:var(--mao);font-weight:var(--mw);font-size:calc(7.6cqw * var(--ms));background:var(--ac);color:var(--acfg);margin-top:1.6cqw;transform:rotate(-2deg)}
+/* L3 adesivo: manchete recortada com contorno + texto selecionado */
+.L3 .scrim{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 75%,transparent) 0%,transparent 16%,transparent 50%,color-mix(in srgb,var(--fg) 82%,transparent) 100%)}
+.L3 .adesivo{margin-top:6cqw;font-size:12.4cqw;line-height:.95;color:var(--papel);transform:rotate(-2.4deg);transform-origin:left;position:relative;z-index:2;
+  text-shadow:.9cqw 0 0 var(--fg),-.9cqw 0 0 var(--fg),0 .9cqw 0 var(--fg),0 -.9cqw 0 var(--fg),.64cqw .64cqw 0 var(--fg),-.64cqw .64cqw 0 var(--fg),.64cqw -.64cqw 0 var(--fg),-.64cqw -.64cqw 0 var(--fg),.8cqw .4cqw 0 var(--fg),-.8cqw .4cqw 0 var(--fg),.4cqw .8cqw 0 var(--fg),-.4cqw .8cqw 0 var(--fg),.8cqw -.4cqw 0 var(--fg),-.8cqw -.4cqw 0 var(--fg),.4cqw -.8cqw 0 var(--fg),-.4cqw -.8cqw 0 var(--fg),0 2cqw 0 var(--ac)}
+.L3 .pe{color:var(--bg);display:grid;gap:5cqw}
+.L3 .pe .sel{--sel:var(--bg);max-width:80%;justify-self:start}
+.L3 .pe .sel .tx{display:block}
+.L3 .pe .sel .mm{display:block;margin-top:1.6cqw;color:var(--limao)}
+/* L4 etiquetas empilhadas sobre a palavra gigante */
+.L4 .scrim{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 90%,transparent) 0%,color-mix(in srgb,var(--bg) 45%,transparent) 14%,transparent 26%,transparent 34%,color-mix(in srgb,var(--bg) 88%,transparent) 66%,var(--bg) 100%)}
+.L4 .pe{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
+.L4 .tags{display:flex;flex-direction:column;align-items:flex-start;gap:1.2cqw;position:relative;z-index:2;margin-bottom:-3cqw;margin-left:2cqw}
+.L4 .tags span{font:700 3.6cqw/1 var(--texto);background:var(--papel);color:var(--tinta);border:.3cqw solid var(--tinta);padding:1.5cqw 2.4cqw;box-shadow:.8cqw .8cqw 0 var(--ac)}
+.L4 .tags span:nth-child(odd){transform:rotate(-2deg)}.L4 .tags span:nth-child(even){transform:rotate(1.6deg) translateX(3cqw)}
+.L4 .gigante{font-size:calc(var(--gs) * 1cqw);line-height:.8;color:var(--ac)}
+.L4 .tx{margin:2.4cqw 0 4.4cqw;font-weight:600;font-size:4.2cqw;max-width:86%}
+/* L5 prancha: a ilustração da fala com um alvo selecionado */
+.L5 .blocos{margin-top:5cqw;display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:2}
+.L5 .blocos span{font-family:var(--titulo);font-variation-settings:var(--fvs);font-weight:var(--tw);font-size:7cqw;line-height:1.1;background:var(--ac);color:var(--acfg);padding:.8cqw 2.2cqw 1.1cqw}
+.L5 .alvo{position:absolute;z-index:2;left:calc(var(--x) * 1cqw);top:calc(var(--y) * 1.25cqw);width:calc(var(--w) * 1cqw);height:calc(var(--h) * 1.25cqw);padding:0;--sel:var(--terra-esc)}
+.L5 .alvo .pilula{left:-.3cqw;top:auto;bottom:calc(100% + 2cqw);background:var(--terra-esc);color:var(--papel)}
+.L5 .pe{position:relative;z-index:2;max-width:56%;background:var(--papel);border:.3cqw solid var(--fg);padding:2.6cqw 3cqw;margin-bottom:4cqw}
+.L5 .pe .tx{color:var(--fg)}
 
 #toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tinta);color:var(--papel);padding:12px 18px;font:600 15px var(--c-mapa);z-index:60;opacity:0;transition:opacity .25s;pointer-events:none;max-width:90vw;text-align:center;box-shadow:0 10px 20px -8px rgba(0,0,0,.6)}
 #toast.on{opacity:1}
@@ -365,7 +389,7 @@ textarea{min-height:120px;resize:vertical;line-height:1.5}
     <div class="bastao" aria-hidden="true"></div>
     <div class="folha">
       <div class="cab"><h2 id="t3">As fontes</h2><span class="ref" aria-label="Prancha III">III<small>língua</small></span></div>
-      <p class="corpo">A fonte é o jeito de falar da marca. O mesmo post foi impresso em quatro tiragens, cada uma com uma dupla diferente. Escreva uma frase sua e toque na tiragem que soa como você: <span class="marca">todos os posts do manual mudam junto.</span></p>
+      <p class="corpo">A fonte é o jeito de falar da marca. A mesma frase foi impressa em quatro tiragens, cada uma com uma dupla diferente. Escreva uma frase sua e toque na tiragem que soa como você: <span class="marca">todos os posts do manual mudam junto.</span></p>
       <div class="campo"><label for="frase">Sua frase</label><input id="frase" type="text" maxlength="40" value="Pode tentar, eu tô aqui"></div>
       <div class="tiragens" id="tiragens" role="group" aria-label="Duplas de fontes"></div>
       <p class="dica-arrasta">Arraste para o lado para ver as quatro tiragens.</p>
@@ -378,7 +402,7 @@ textarea{min-height:120px;resize:vertical;line-height:1.5}
     <div class="bastao" aria-hidden="true"></div>
     <div class="folha">
       <div class="cab"><h2 id="t4">Os 5 layouts</h2><span class="ref" aria-label="Prancha IV">IV<small>palato</small></span></div>
-      <p class="corpo">O palato dá forma à fala; os layouts dão forma ao feed. Todos têm a mesma margem, a mesma barra no topo com o tema e o mesmo rodapé com o seu @. São estes cinco que vão para o seu Canva.</p>
+      <p class="corpo">O palato dá forma à fala; os layouts dão forma ao feed. Todos usam foto cheia, a mesma margem e as mesmas duas barras: no topo o seu @ e o tema, embaixo o número do slide e o que fazer. São estes cinco que vão para o seu Canva.</p>
       <div class="especimes" id="especimes"></div>
       <div class="reacao" data-k="layouts"><p>Os layouts</p><div class="carimbos"></div></div>
     </div>
@@ -453,49 +477,56 @@ const ic = (id) => `<svg aria-hidden="true"><use href="#i-${id}"/></svg>`;
 const V = { musgo: '#3F4A2B', cafe: '#4A3426', tinta: '#1C1A17', papel: '#F4EDDD', areia: '#E3D4B4', terracota: '#C4623A', terraEsc: '#A24B28', limao: '#C9DB5E', jeans: '#4F6D8F' };
 const H = '@anaroque.teacher';
 
-// ---------- os 5 layouts (estrutura fixa; cores e conteúdo variam) ----------
+// ---------- os 5 layouts (estrutura fixa; foto, cores e conteúdo variam) ----------
 const est = (c) => `--bg:${c.bg};--fg:${c.fg};--ac:${c.ac};--acfg:${c.acfg || V.musgo}`;
+const foto = (d, img) => `<img class="fundo" src="img/${img || d.img}.jpg" alt=""${d.op ? ` style="--op:${d.op}"` : ''}>`;
+const topo = (d) => `<div class="barra"><span>${H}</span><i></i><span>${d.tag}</span></div>`;
+const base = (d, cta, pe) => `<div class="barra${pe ? ' pe' : ''}"><span>${d.n || ''}</span><span class="dir">${d.r || cta}</span></div>`;
+const sel = (h, cls) => `<span class="sel${cls ? ' ' + cls : ''}">${h}<b></b><b></b><b></b><b></b></span>`;
+const pl = (ps) => (ps || []).map(([t, x, y, r]) => `<span class="pilula" style="--x:${x};--y:${y};--r:${r || 0}">${t}</span>`).join('');
+const gs = (w, max) => Math.min(max, Math.round(1400 / [...w].length) / 10);
 const L = {
-  L1: (c, d) => `<div class="post L1" style="${est(c)}">${d.tex ? '<div class="texfundo"></div>' : ''}${d.ilu ? `<img class="ilu" src="img/anatomia.jpg" alt="">` : ''}<div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || '01/05'}</span></div><div class="tt">${d.t}<span class="mm">${d.m}</span></div><div class="rod"><span>${H}</span><span class="seta">arrasta ${ic('seta')}</span></div></div></div>`,
-  L2: (c, d) => `<div class="post L2" style="${est(c)}"><img class="fundo" src="img/${d.img || 'pratica'}.jpg" alt=""><div class="scrim"></div><svg class="traco" viewBox="0 0 300 120" fill="none" aria-hidden="true"><path d="M5 100 C 60 20, 120 120, 170 60 S 260 10, 295 40" stroke="${c.ac}" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round"/></svg><span class="adesivo">${d.ad}</span><div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || 'reel'}</span></div><div class="titulo"><div class="tt">${d.t}</div></div><div class="rod"><span>${H}</span><span>${d.r || ic('play') + ' assista'}</span></div></div></div>`,
-  L3: (c, d) => `<div class="post L3" style="${est(c)}">${c.tex !== false ? '<div class="texfundo"></div>' : ''}<div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || ''}</span></div><span class="fita"></span><div class="bilhete"><div class="tt">${d.t}</div><span class="mm" style="color:${c.mm || V.terraEsc}">${d.m}</span></div><div class="rod"><span>${H}</span><span>${ic('salvar')} salve</span></div></div></div>`,
-  L4: (c, d) => `<div class="post L4" style="${est(c)}"><div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || 'lista'}</span></div><div class="num">${d.num}</div><div class="tt">${d.t}</div><ul>${d.itens.map((i) => `<li>${i}</li>`).join('')}</ul><div class="rod"><span>${H}</span><span class="seta">${ic('salvar')} salve pra treinar</span></div></div></div>`,
-  L5: (c, d) => `<div class="post L5" style="${est(c)}"><img class="espec" src="img/trato.jpg" alt=""><div class="polaroid"><img src="img/${d.img || 'pratica'}.jpg" alt=""><span>${d.leg}</span></div><span class="fita"></span><div class="in"><div class="meta"><span>${d.tag}</span><span>${d.n || ''}</span></div><div class="titulo"><div class="tt">${d.t}</div><p class="tx">${d.x}</p></div><div class="rod"><span>${H}</span><span>leia a legenda</span></div></div></div>`,
+  L1: (c, d) => `<div class="post L1" style="${est(c)}">${foto(d)}<div class="scrim"></div><div class="in">${topo(d)}<div class="mx">${sel(d.p, 'pq')}<span class="tt gr" style="--gs:${gs(d.g, 24)}">${d.g}</span></div>${base(d, `arrasta ${ic('seta')}`, true)}</div>${pl(d.pl)}</div>`,
+  L2: (c, d) => `<div class="post L2" style="${est(c)}">${foto(d)}<div class="scrim"></div><div class="in">${topo(d)}<div class="blocos">${d.linhas.map((l) => `<span>${l}</span>`).join('')}${d.m ? `<em>${d.m}</em>` : ''}</div>${base(d, `${ic('salvar')} salve`, true)}</div>${pl(d.pl)}</div>`,
+  L3: (c, d) => `<div class="post L3" style="${est(c)}">${foto(d)}<div class="scrim"></div><div class="in">${topo(d)}<div class="tt adesivo">${d.t}</div><div class="pe">${sel(`<span class="tx">${d.x}</span>${d.m ? `<span class="mm">${d.m}</span>` : ''}`)}${base(d, 'leia a legenda')}</div></div></div>`,
+  L4: (c, d) => `<div class="post L4" style="${est(c)}">${foto(d)}<div class="scrim"></div><div class="in">${topo(d)}<div class="pe"><div class="tags">${d.itens.map((i) => `<span>${i}</span>`).join('')}</div><div class="tt gigante" style="--gs:${gs(d.num, 46)}">${d.num}</div><p class="tx">${d.t}</p></div>${base(d, `${ic('salvar')} salve pra treinar`)}</div></div>`,
+  L5: (c, d) => `<div class="post L5" style="${est(c)}">${foto(d, 'trato')}<div class="in">${topo(d)}<div class="blocos">${d.linhas.map((l) => `<span>${l}</span>`).join('')}</div><div class="pe"><p class="tx">${d.x}</p></div>${base(d, 'leia a legenda')}</div>${sel(`<span class="pilula">${d.alvo.t}</span>`, 'alvo').replace('class="sel alvo"', `class="sel alvo" style="--x:${d.alvo.x};--y:${d.alvo.y};--w:${d.alvo.w};--h:${d.alvo.h}"`)}</div>`,
 };
 const C = {
-  musgo: { bg: V.musgo, fg: V.papel, ac: V.limao, acfg: V.musgo, mm: V.terraEsc },
+  musgo: { bg: V.musgo, fg: V.papel, ac: V.limao, acfg: V.musgo },
   papel: { bg: V.papel, fg: V.musgo, ac: V.terraEsc, acfg: V.papel },
   areia: { bg: V.areia, fg: V.cafe, ac: V.terraEsc, acfg: V.papel },
-  terra: { bg: V.terracota, fg: V.tinta, ac: V.papel, acfg: V.tinta, mm: V.musgo, tex: false },
   cafe: { bg: V.cafe, fg: V.papel, ac: V.limao, acfg: V.cafe },
   jeans: { bg: V.jeans, fg: V.papel, ac: V.limao, acfg: V.jeans },
+  prancha: { bg: V.papel, fg: V.musgo, ac: V.limao, acfg: V.musgo },
 };
 const ESP = [
-  ['L1', 'Capa de carrossel', 'O tema da semana com a ilustração. Abre todo carrossel.', C.papel, { tag: 'Pronúncia · semana 1', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', ilu: true }],
-  ['L2', 'Capa de reel ou foto', 'Sua foto com o título por cima. Reels e histórias de alunas.', C.musgo, { tag: 'Histórias de alunas', t: 'Entendia tudo, mas <b>não saía</b>', ad: 'história real' }],
-  ['L3', 'Bilhete', 'Frase, dica rápida ou recado. Papel com fita.', C.musgo, { tag: 'Recado da teacher', t: 'Não existe erro bobo. Existe comunicação em construção.', m: 'Teacher Ana' }],
-  ['L4', 'Lista numerada', 'Frases prontas, erros comuns, passo a passo.', C.areia, { tag: 'Inglês no trabalho', num: '3', t: 'frases pra abrir uma reunião', itens: ['Thanks for joining, everyone', 'Let’s get started', 'Quick question before we begin'] }],
-  ['L5', 'Colagem', 'Explicação com um toque de ciência: foto, prancha e texto curto.', C.areia, { tag: 'Por trás da fala', t: 'Por que dá branco?', x: 'Quando o cérebro entra em alerta, a fala é a primeira a travar.', leg: 'respira' }],
+  ['L1', 'Manchete mista', 'Uma frase curta selecionada e uma palavra enorme, com etiquetas soltas na foto. Capa de carrossel e de reel.', C.musgo, { img: 'pratica', tag: 'Pronúncia · semana 1', p: 'Seu inglês', g: 'trava?', n: '01/05', pl: [['no espelho', 56, 47, -6], ['2 min por dia', 7, 69, 4], ['sem vergonha', 50, 80, -3]] }],
+  ['L2', 'Blocos marcados', 'Cada linha no seu bloco de cor e etiquetas apontando o que aparece na foto. Rotina, bastidores, listas leves.', C.musgo, { img: 'grama', tag: 'Rotina de estudo', linhas: ['Tudo que uma aluna', 'leva pra estudar', 'inglês ao ar livre:'], pl: [['o café (sempre)', 63, 41, 5], ['a aula gravada', 9, 67, -3], ['o caderno de sons', 50, 73, -4], ['zero pressa', 12, 86, 3]] }],
+  ['L3', 'Adesivo', 'Manchete recortada com contorno e o texto dentro da caixa de seleção. Recados e opiniões.', C.papel, { img: 'poltrona', tag: 'Teacher de inglês', t: 'Pare de traduzir na cabeça', x: 'Fale com a boca, não com a regra. Eu te mostro como, um som por vez.', m: 'Teacher Ana' }],
+  ['L4', 'Etiquetas', 'Etiquetas empilhadas sobre uma palavra gigante. Frases prontas, erros comuns, passo a passo.', C.papel, { img: 'colagem', tag: 'Pronúncia', num: 'TH', itens: ['think', 'three', 'thanks'], t: 'Três palavras pra treinar o TH na frente do espelho.' }],
+  ['L5', 'Prancha', 'A ilustração da fala com a parte do dia selecionada. Explicações com um pé na ciência.', C.prancha, { tag: 'Por trás da fala', linhas: ['A língua é', 'um músculo.', 'Dá pra treinar.'], alvo: { x: 32, y: 45, w: 32, h: 21, t: 'a língua' }, x: 'Ela aprendeu os movimentos do português primeiro. O inglês pede outros.' }],
 ];
+
 function desenharPosts() {
   $('#especimes').innerHTML = ESP.map(([id, nome, uso, c, d], i) => `<figure>${L[id](c, d)}<figcaption class="leg"><b>Fig. ${i + 1} · ${nome}</b>${uso}</figcaption></figure>`).join('');
   $('#grade').innerHTML = [
-    L.L1(C.musgo, { tag: 'Pronúncia · 01', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', tex: true }),
-    L.L2(C.musgo, { tag: 'Reel', t: 'Treine no <b>espelho</b>', ad: '2 min por dia' }),
-    L.L3(C.musgo, { tag: 'Recado', t: 'Pode tentar. Eu tô aqui pra te apoiar.', m: 'Teacher Ana' }),
-    L.L4(C.areia, { tag: 'Trabalho', num: '3', t: 'frases pra abrir uma reunião', itens: ['Thanks for joining', 'Let’s get started', 'Quick question first'] }),
-    L.L5(C.areia, { tag: 'Ciência da fala', t: 'Por que dá branco?', x: 'O cérebro em alerta trava a fala.', leg: 'respira' }),
-    L.L1(C.papel, { tag: 'Pronúncia · 02', t: 'O som do TH sem medo', m: 'língua entre os dentes', ilu: true }),
-    L.L3(C.terra, { tag: 'Recado', t: 'Não existe erro bobo.', m: 'comunicação em construção' }),
-    L.L4(C.jeans, { tag: 'Pronúncia', num: '5', t: 'palavras que travam todo mundo', itens: ['comfortable', 'thought', 'world'] }),
-    L.L2(C.cafe, { tag: 'Histórias', t: 'Entendia tudo, mas <b>não saía</b>', ad: 'história real', img: 'colagem' }),
+    L.L1(C.musgo, { img: 'pratica', tag: 'Pronúncia', p: 'Seu inglês', g: 'trava?', pl: [['no espelho', 56, 47, -6], ['sem vergonha', 50, 80, -3]] }),
+    L.L2(C.musgo, { img: 'grama', tag: 'Rotina', linhas: ['Tudo que uma aluna', 'leva pra estudar', 'inglês ao ar livre:'], pl: [['o café (sempre)', 63, 41, 5], ['o caderno de sons', 50, 73, -4]] }),
+    L.L3(C.papel, { img: 'poltrona', tag: 'Recado', t: 'Pare de traduzir na cabeça', x: 'Fale com a boca, não com a regra.', m: 'Teacher Ana' }),
+    L.L4(C.papel, { img: 'colagem', tag: 'Pronúncia', num: 'TH', itens: ['think', 'three', 'thanks'], t: 'Três palavras pra treinar no espelho.' }),
+    L.L5(C.prancha, { tag: 'Ciência da fala', linhas: ['A língua é', 'um músculo.'], alvo: { x: 32, y: 45, w: 32, h: 21, t: 'a língua' }, x: 'E músculo se treina.' }),
+    L.L1(C.cafe, { img: 'grama', tag: 'Fora da sala', p: 'Estudar inglês', g: 'lá fora', pl: [['no gramado', 58, 40, 5], ['com café', 9, 70, -4]] }),
+    L.L3(C.areia, { img: 'pratica', tag: 'Recado', t: 'Não existe erro bobo.', x: 'Existe comunicação em construção.', m: 'Teacher Ana' }),
+    L.L4(C.jeans, { img: 'grama', op: '50% 30%', tag: 'Pronúncia', num: '4', itens: ['comfortable', 'thought', 'world', 'squirrel'], t: 'palavras que travam todo mundo.' }),
+    L.L2(C.cafe, { img: 'poltrona', tag: 'Histórias', linhas: ['Entendia tudo,', 'mas não saía.'], m: 'história real', pl: [['6 meses depois', 56, 58, -4], ['falando em reunião', 8, 76, 3]] }),
   ].join('');
   $('#trilho').innerHTML = [
-    L.L1(C.musgo, { tag: 'Pronúncia · semana 1', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', n: '01/05', tex: true }),
-    L.L5(C.areia, { tag: 'Por que trava', t: 'Sua boca aprendeu português primeiro', x: 'Cada língua usa os músculos do rosto de um jeito. Não é falta de talento: é treino de músculo.', leg: 'músculo, não talento', n: '02/05' }),
-    L.L4(C.papel, { tag: 'Prática da semana', num: 'TH', t: 'em 3 passos, na frente do espelho', itens: ['Ponta da língua entre os dentes', 'Sopre o ar devagar', 'Agora diga: think, three, thanks'], n: '03/05' }),
-    L.L3(C.musgo, { tag: 'Lembrete', t: 'Errar o TH faz parte. Treinar 2 minutos por dia muda tudo.', m: 'sem pressa', n: '04/05' }),
-    L.L2(C.musgo, { tag: 'Pra levar', t: 'Pode tentar. <b>Eu tô aqui.</b>', ad: 'salve', n: '05/05', r: 'me conta nos comentários' }),
+    L.L1(C.musgo, { img: 'grama', tag: 'Pronúncia · semana 1', p: 'O som do TH', g: 'sem medo', n: '01/05', pl: [['2 min por dia', 58, 40, 5], ['salve pra treinar', 9, 72, -3]] }),
+    L.L5(C.prancha, { tag: 'Por que trava', linhas: ['Por que o TH', 'trava?'], alvo: { x: 14, y: 53, w: 18, h: 14, t: 'a ponta da língua' }, x: 'No português a língua fica atrás dos dentes. No TH, ela sai um pouquinho.', n: '02/05' }),
+    L.L4(C.musgo, { img: 'pratica', tag: 'Prática da semana', num: 'TH', itens: ['ponta da língua entre os dentes', 'sopre o ar devagar', 'diga: think, three, thanks'], t: 'em 3 passos, na frente do espelho.', n: '03/05' }),
+    L.L3(C.papel, { img: 'poltrona', tag: 'Lembrete', t: 'Errar o TH faz parte.', x: 'Dois minutos por dia mudam tudo. Sem pressa.', m: 'Teacher Ana', n: '04/05' }),
+    L.L2(C.papel, { img: 'colagem', tag: 'Pra levar', linhas: ['Pode tentar.', 'Eu tô aqui', 'pra te apoiar.'], m: 'me conta nos comentários', pl: [['salve', 64, 62, 6], ['mande pra uma amiga', 12, 77, -3]], n: '05/05', r: 'fim' }),
   ].join('');
   pontos();
 }
@@ -514,7 +545,7 @@ function pintarAcorde() {
   const [bg, fg] = FUN[fundo]; const claro = bg === V.papel || bg === V.areia;
   const ac = claro && dest === 'Terracota' ? V.terraEsc : DES[dest];
   const acfg = dest === 'Verde-limão' ? V.musgo : (dest === 'Terracota' ? (claro ? V.papel : V.tinta) : V.papel);
-  $('#prev').innerHTML = L.L1({ bg, fg, ac, acfg }, { tag: 'Pronúncia · semana 1', t: 'Os músculos que fazem você falar inglês', m: 'e como acordar eles', ilu: claro, tex: fundo === 'Verde musgo' });
+  $('#prev').innerHTML = L.L2({ bg, fg, ac, acfg }, { img: 'grama', tag: 'Pronúncia · semana 1', linhas: ['Os músculos que', 'fazem você falar', 'inglês'], m: 'e como acordar eles', pl: [['o caderno de sons', 50, 73, -4], ['2 min por dia', 9, 67, -3]] });
   $('#acorde-nome').innerHTML = `Acorde <b>${esc(NOMES[fundo + '|' + dest])}</b>: ${esc(fundo.toLowerCase())} com ${esc(dest.toLowerCase())}.`;
   document.querySelectorAll('#fundos button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.n === fundo));
   document.querySelectorAll('#destaques button').forEach((b) => { const pode = OK[fundo].includes(b.dataset.n); b.disabled = !pode; b.setAttribute('aria-pressed', b.dataset.n === dest); });
@@ -529,8 +560,9 @@ document.querySelectorAll('#destaques button').forEach((b) => b.onclick = () => 
 const PARES = [['a', 'Orgânica', 'Fraunces + Caveat + DM Sans'], ['b', 'Editorial', 'Gloock + Shadows Into Light + Work Sans'], ['c', 'Amigável', 'Young Serif + Patrick Hand + Nunito'], ['d', 'Moderna', 'Bricolage Grotesque + Caveat Brush + Figtree']];
 let par = 'a';
 function desenharTiragens() {
-  const fr = ($('#frase').value.trim() || 'Pode tentar, eu tô aqui'); const ps = fr.split(' '); const ult = ps.length > 1 ? ps.pop() : ''; const ini = ps.join(' ');
-  $('#tiragens').innerHTML = PARES.map(([id, nome, fontes]) => `<div class="tiragem fp-${id}" aria-pressed="${id === par}">${L.L1(C.papel, { tag: 'Tiragem ' + id.toUpperCase(), n: nome, t: esc(ini), m: esc(ult), ilu: true })}<div class="amostra"><span class="a-t">${esc(ini)}</span><span class="a-m">${esc(ult)}</span><span class="a-x">Texto do carrossel nessa fonte: cada língua usa os músculos do rosto de um jeito, e dá para treinar.</span><span class="a-f">${nome}: ${fontes}</span></div><button type="button" class="usar" data-p="${id}">${id === par ? 'Tiragem escolhida' : 'Usar esta tiragem'}</button></div>`).join('');
+  const fr = ($('#frase').value.trim() || 'Pode tentar, eu tô aqui'); const ps = fr.split(/\s+/); const ult = ps.length > 1 ? ps.pop() : 'a voz'; const ini = ps.join(' ');
+  const FN = {"a":["Fraunces","Caveat","DM Sans"],"b":["Gloock","Shadows Into Light","Work Sans"],"c":["Young Serif","Patrick Hand","Nunito"],"d":["Bricolage Grotesque","Caveat Brush","Figtree"]};
+  $('#tiragens').innerHTML = PARES.map(([id, nome]) => `<div class="tiragem fp-${id}" aria-pressed="${id === par}"><div class="t-cab"><b>${nome}</b><span>Tiragem ${id.toUpperCase()}</span></div><p class="t-frase">${esc(ini)}${ult ? `<em>${esc(ult)}</em>` : ''}</p><div class="t-aa"><div><i class="g1">Aa</i><small>Título<span>${FN[id][0]}</span></small></div><div><i class="g2">Aa</i><small>Destaque<span>${FN[id][1]}</span></small></div><div><i class="g3">Aa</i><small>Texto<span>${FN[id][2]}</span></small></div></div><p class="t-corpo">Sua boca aprendeu português primeiro. Cada língua usa os músculos do rosto de um jeito, e dá para treinar.</p><button type="button" class="usar" data-p="${id}">${id === par ? 'Tiragem escolhida' : 'Usar esta tiragem'}</button></div>`).join('');
   document.querySelectorAll('.usar').forEach((b) => b.onclick = () => { par = b.dataset.p; document.documentElement.dataset.par = par; desenharTiragens(); escolhas(); salvar(); toast(`Tiragem ${PARES.find((x) => x[0] === par)[1]} aplicada em todos os posts`); });
 }
 $('#frase').addEventListener('input', desenharTiragens);
